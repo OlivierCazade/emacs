@@ -114,3 +114,7 @@
 
 (setq debug-on-error nil
       debug-on-quit nil)
+
+(when (eq system-type 'darwin)
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier nil))

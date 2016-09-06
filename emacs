@@ -118,3 +118,8 @@
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier nil))
+
+(use-package dockerfile-mode
+  :defer t
+  :ensure t
+  )

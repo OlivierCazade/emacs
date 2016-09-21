@@ -53,7 +53,7 @@
   :bind
   (:map ivy-mode-map
    ("C-'" . ivy-avy))
-  :config
+  :init
   (ivy-mode 1)
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
   (setq ivy-use-virtual-buffers t)

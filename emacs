@@ -117,6 +117,9 @@
   (global-flycheck-mode 1)
   )
 
+(defun is-current-file-tramp ()
+  (tramp-tramp-file-p (buffer-file-name (current-buffer))))
+
 (use-package tramp
   :ensure t
   :defer t

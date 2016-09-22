@@ -51,10 +51,6 @@
   (projectile-global-mode)
   :bind ("M-<tab>" . projectile-find-file))
 
-;; (require 'ido)
-;; (ido-mode t)
-;; (setq ido-auto-merge-work-directories-length -1)
-
 (use-package ivy :ensure t
   :diminish (ivy-mode . "")
   :bind

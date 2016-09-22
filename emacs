@@ -44,6 +44,13 @@
 
 (define-key global-map "\C-xk" 'kill-this-buffer)
 
+;; projectile
+(use-package projectile
+  :diminish projectile-mode
+  :init
+  (projectile-global-mode)
+  :bind ("M-<tab>" . projectile-find-file))
+
 ;; (require 'ido)
 ;; (ido-mode t)
 ;; (setq ido-auto-merge-work-directories-length -1)
@@ -66,7 +73,10 @@
   ;; configure regexp engine.
   (setq ivy-re-builders-alist
 	;; allow input not in order
-        '((t   . ivy--regex-ignore-order))))
+        '((t   . ivy--regex-ignore-order)))
+  ;; use ivy as projectile completion
+  (setq projectile-completion-system 'ivy)
+  )
 
 (setq c-default-style "linux"
       c-basic-offset 4
@@ -145,6 +155,13 @@
   :defer t
   :ensure t
   )
+
+;; (use-package ansible
+;;   :defer t
+;;   :ensure t
+;;   :config
+;;   (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
+;;   )
 
 (use-package dockerfile-mode
   :defer t

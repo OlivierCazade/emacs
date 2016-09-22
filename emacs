@@ -146,14 +146,16 @@
   :ensure t
   )
 
+(use-package dockerfile-mode
+  :defer t
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+  )
+
 (setq debug-on-error nil
       debug-on-quit nil)
 
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier nil))
-
-(use-package dockerfile-mode
-  :defer t
-  :ensure t
-  )

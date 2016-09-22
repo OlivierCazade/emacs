@@ -117,6 +117,15 @@
   (global-flycheck-mode 1)
   )
 
+(use-package tramp
+  :ensure t
+  :defer t
+  :config
+  (add-hook
+   'find-file-hook
+   (lambda () (if (is-current-file-tramp) (setq-local make-backup-files nil))))
+  )
+
 (use-package magit
   :ensure t
   :defer t

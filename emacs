@@ -74,12 +74,6 @@
   (setq projectile-completion-system 'ivy)
   )
 
-(use-package swiper
-  :ensure t
-  :bind
-  (([remap isearch-forward]  . swiper)
-([remap isearch-backward] . swiper)))
-
 (setq c-default-style "linux"
       c-basic-offset 4
       tab-width 4

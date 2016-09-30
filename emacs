@@ -43,6 +43,7 @@
 (menu-bar-mode -1)
 
 (define-key global-map "\C-xk" 'kill-this-buffer)
+(global-set-key [?\C-c ?\C-c] 'comment-or-uncomment-region)
 
 ;; projectile
 (use-package projectile

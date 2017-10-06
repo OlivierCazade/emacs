@@ -82,6 +82,8 @@
 
 (global-auto-revert-mode t)
 
+(setq py-python-command "python3")
+
 ;; org-mod
 (use-package org
   :mode (("\\.org$" . org-mode))
@@ -121,8 +123,10 @@
   :ensure t
   :defer t
   :init
-  (global-flycheck-mode 1)
+  (global-flycheck-mode)
   )
+
+(setq flycheck-python-pycompile-executable "python3")
 
 (defun is-current-file-tramp ()
   (tramp-tramp-file-p (buffer-file-name (current-buffer))))

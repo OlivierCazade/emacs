@@ -21,13 +21,13 @@
 
 ;; Theme configuration
 (use-package ample-theme
-	     :init (progn (load-theme 'ample t t)
-			  (enable-theme 'ample))
-	     :defer t
-	     :ensure t)
+  :init (progn (load-theme 'ample t t)
+	       (enable-theme 'ample))
+  :defer t
+  :ensure t)
 
 
-(setq inhbit-startup-message t)
+(setq inhibit-startup-message t)
 
 (column-number-mode t)
 (line-number-mode t)
@@ -36,6 +36,8 @@
 (show-paren-mode)
 
 (setq-default show-trailing-whitespace t)
+(add-hook 'diff-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (tool-bar-mode -1)
@@ -52,11 +54,19 @@
   (projectile-global-mode)
   :bind ("M-<tab>" . projectile-find-file))
 
+(use-package magit
+  :ensure t
+  :defer t
+  :init
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (setq magit-completing-read-function 'ivy-completing-read)
+  )
+
 (use-package ivy :ensure t
   :diminish (ivy-mode . "")
   :bind
-  (:map ivy-mode-map
-   ("C-'" . ivy-avy))
+  (("M-x" . counsel-M-x)
+   ("C-s" . swiper))
   :init
   (ivy-mode 1)
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
@@ -67,6 +77,8 @@
   (setq ivy-count-format "")
   ;; no regexp by default
   (setq ivy-initial-inputs-alist nil)
+  ;; ivy completion in magit
+  (setq magit-completing-read-function 'ivy-completing-read)
   ;; configure regexp engine.
   (setq ivy-re-builders-alist
 	;; allow input not in order
@@ -106,7 +118,7 @@
 (use-package aggressive-indent
   :ensure t
   :defer t
-  :config
+  :init
   (global-aggressive-indent-mode 1)
 ;;  (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
   )
@@ -119,6 +131,11 @@
   )
 
 
+(use-package smex
+  :ensure t
+  :defer t
+  :init (smex-initialize))
+
 (use-package flycheck
   :ensure t
   :defer t
@@ -128,41 +145,41 @@
 
 (setq flycheck-python-pycompile-executable "python3")
 
-(defun is-current-file-tramp ()
-  (tramp-tramp-file-p (buffer-file-name (current-buffer))))
+;; (defun is-current-file-tramp ()
+;;   (tramp-tramp-file-p (buffer-file-name (current-buffer))))
 
-(use-package tramp
-  :ensure t
-  :defer t
-  :config
-  (add-hook
-   'find-file-hook
-   (lambda () (if (is-current-file-tramp) (setq-local make-backup-files nil))))
-  )
-
-(use-package magit
-  :ensure t
-  :defer t
-  :init
-  (global-set-key (kbd "C-x g") 'magit-status)
-  )
+;; (use-package tramp
+;;   :ensure t
+;;   :defer t
+;;   :init
+;;   (add-hook
+;;    'find-file-hook
+;;    (lambda () (if (is-current-file-tramp) (setq-local make-backup-files nil))))
+;;   )
 
 (use-package which-key
   :ensure t
   :defer t
-  :config (which-key-mode 1))
+  :init (which-key-mode 1))
 
 (use-package markdown-mode
   :defer t
   :ensure t
   )
 
-;; (use-package ansible
-;;   :defer t
-;;   :ensure t
-;;   :config
-;;   (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
-;;   )
+(use-package ansible
+  :defer t
+  :ensure t
+  :init
+  (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
+  )
+
+(use-package jedi
+  :ensure t
+  :init
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setq jedi:complete-on-dot t)
+  )
 
 (use-package dockerfile-mode
   :defer t
@@ -171,9 +188,28 @@
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
   )
 
+(use-package exec-path-from-shell
+  :ensure t
+  :defer f
+  :init
+  (exec-path-from-shell-copy-env "GOPATH")
+  (exec-path-from-shell-copy-env "SHELL")
+  (exec-path-from-shell-copy-env "PATH")
+  (when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize)))
+
 (setq debug-on-error nil
       debug-on-quit nil)
 
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier nil))
+
+(setq
+ backup-by-copying t      ; don't clobber symlinks
+ backup-directory-alist
+ '(("." . "~/.saves"))    ; don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)       ; use versioned backups

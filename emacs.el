@@ -33,7 +33,11 @@
 (line-number-mode t)
 (global-linum-mode t)
 
+
+(setq fill-column 80)
+
 (show-paren-mode)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq-default show-trailing-whitespace t)
 (add-hook 'diff-mode-hook (lambda () (setq show-trailing-whitespace nil)))
@@ -120,7 +124,7 @@
   :defer t
   :init
   (global-aggressive-indent-mode 1)
-;;  (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+  ;;  (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
   )
 
 (use-package diff-hl

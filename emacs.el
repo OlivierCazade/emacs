@@ -188,7 +188,7 @@
 (use-package dockerfile-mode
   :defer t
   :ensure t
-  :config
+  :init
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
   )
 

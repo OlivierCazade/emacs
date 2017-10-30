@@ -185,6 +185,13 @@
   (setq jedi:complete-on-dot t)
   )
 
+(use-package smartparens
+  :ensure t
+  :init
+  (progn
+    (require 'smartparens-config)
+    (smartparens-global-mode t)))
+
 (use-package dockerfile-mode
   :defer t
   :ensure t

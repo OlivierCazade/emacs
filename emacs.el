@@ -149,6 +149,16 @@
 
 (setq flycheck-python-pycompile-executable "python3")
 
+(use-package flyspell
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+    (add-hook 'text-mode-hook 'flyspell-mode)
+    )
+  )
+
 ;; (defun is-current-file-tramp ()
 ;;   (tramp-tramp-file-p (buffer-file-name (current-buffer))))
 

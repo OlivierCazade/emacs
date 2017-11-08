@@ -68,9 +68,6 @@
 
 (use-package ivy :ensure t
   :diminish (ivy-mode . "")
-  :bind
-  (("M-x" . counsel-M-x)
-   ("C-s" . swiper))
   :init
   (ivy-mode 1)
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
@@ -89,6 +86,14 @@
         '((t   . ivy--regex-ignore-order)))
   ;; use ivy as projectile completion
   (setq projectile-completion-system 'ivy)
+  )
+
+(use-package counsel
+  :ensure t
+  :bind
+  :bind
+  (("M-x" . counsel-M-x)
+   ("C-s" . swiper))
   )
 
 (setq c-default-style "linux"

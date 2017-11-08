@@ -229,6 +229,17 @@
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier nil))
 
+(defun notify-compilation-result(buffer msg)
+  (if (string-match "^finished" msg)
+      (progn
+	(kill-this-buffer)))
+  (setq current-frame (car (car (cdr (current-frame-configuration)))))
+  (select-frame-set-input-focus current-frame)
+  )
+
+(add-to-list 'compilation-finish-functions
+	     'notify-compilation-result)
+
 (setq
  backup-by-copying t      ; don't clobber symlinks
  backup-directory-alist

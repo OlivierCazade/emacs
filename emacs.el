@@ -195,13 +195,6 @@
   (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
   )
 
-(use-package jedi
-  :ensure t
-  :init
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (setq jedi:complete-on-dot t)
-  )
-
 (use-package smartparens
   :ensure t
   :init

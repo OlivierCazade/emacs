@@ -104,6 +104,10 @@
 
 (setq py-python-command "python3")
 
+(use-package elpy
+  :ensure t
+  :init (elpy-enable))
+
 ;; org-mod
 (use-package org
   :mode (("\\.org$" . org-mode))

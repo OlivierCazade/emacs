@@ -104,6 +104,10 @@
 
 (setq py-python-command "python3")
 
+(use-package elpy
+  :ensure t
+  :init (elpy-enable))
+
 ;; org-mod
 (use-package org
   :mode (("\\.org$" . org-mode))
@@ -195,13 +199,6 @@
   (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
   )
 
-(use-package jedi
-  :ensure t
-  :init
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (setq jedi:complete-on-dot t)
-  )
-
 (use-package smartparens
   :ensure t
   :init
@@ -215,6 +212,13 @@
   :init
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
   )
+
+(use-package terraform-mode
+  :ensure t
+  :mode "\\.tf$"
+  :init
+  (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
+
 
 (use-package exec-path-from-shell
   :ensure t
@@ -232,6 +236,17 @@
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier nil))
+
+(defun notify-compilation-result(buffer msg)
+  (if (string-match "^finished" msg)
+      (progn
+	(kill-this-buffer)))
+  (setq current-frame (car (car (cdr (current-frame-configuration)))))
+  (select-frame-set-input-focus current-frame)
+  )
+
+(add-to-list 'compilation-finish-functions
+	     'notify-compilation-result)
 
 (setq
  backup-by-copying t      ; don't clobber symlinks

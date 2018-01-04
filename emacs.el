@@ -91,7 +91,6 @@
 (use-package counsel
   :ensure t
   :bind
-  :bind
   (("M-x" . counsel-M-x)
    ("C-s" . swiper))
   )

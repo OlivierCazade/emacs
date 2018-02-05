@@ -34,6 +34,11 @@
 (global-linum-mode t)
 
 
+;; From : https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessage/
+(setq initial-scratch-message
+      ";; - 'Tis but a scratch!\n;; - A scratch? Your arm's off!\n;; - No, it isn't!\n\n")
+
+
 (setq fill-column 80)
 
 (show-paren-mode)

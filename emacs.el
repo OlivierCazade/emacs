@@ -177,14 +177,12 @@
 ;; (defun is-current-file-tramp ()
 ;;   (tramp-tramp-file-p (buffer-file-name (current-buffer))))
 
-;; (use-package tramp
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   (add-hook
-;;    'find-file-hook
-;;    (lambda () (if (is-current-file-tramp) (setq-local make-backup-files nil))))
-;;   )
+(use-package tramp
+  :ensure t
+  :defer t
+  :init
+  (setq tramp-default-method "ssh")
+  )
 
 (use-package which-key
   :ensure t

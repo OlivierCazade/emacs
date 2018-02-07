@@ -96,7 +96,8 @@
   :ensure t
   :bind
   (("M-x" . counsel-M-x)
-   ("C-s" . swiper))
+   ("C-s" . swiper)
+   ("C-x C-f" . counsel-find-file))
   )
 
 (setq c-default-style "linux"

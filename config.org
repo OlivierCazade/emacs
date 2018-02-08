@@ -1,7 +1,4 @@
-(setq debug-on-error t
-      debug-on-quit t)
-
-
+#+begin_src emacs-lisp
 ;; Theme configuration
 (use-package ample-theme
   :init (progn (load-theme 'ample t t)
@@ -216,8 +213,6 @@
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)))
 
-(setq debug-on-error nil
-      debug-on-quit nil)
 
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)
@@ -242,3 +237,5 @@
  kept-new-versions 6
  kept-old-versions 2
  version-control t)       ; use versioned backups
+
+#+end_src

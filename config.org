@@ -65,6 +65,18 @@ Store every backup fils in ~/.emacs.d/backups.
  version-control t)       ; use versioned backups
 #+end_src
 
+** smartparens
+#+begin_src emacs-lisp
+
+(use-package smartparens
+  :ensure t
+  :init
+  (progn
+    (require 'smartparens-config)
+    (smartparens-global-mode t)))
+
+#+end_src
+
 ** Mac customization
 #+begin_src emacs-lisp
 (when (eq system-type 'darwin)
@@ -279,18 +291,6 @@ Highlight uncommitted lines
   :init
   (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
   )
-
-#+end_src
-
-* smartparens
-#+begin_src emacs-lisp
-
-(use-package smartparens
-  :ensure t
-  :init
-  (progn
-    (require 'smartparens-config)
-    (smartparens-global-mode t)))
 
 #+end_src
 

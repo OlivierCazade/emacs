@@ -51,7 +51,6 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
   (setq mac-option-modifier nil))
 #+end_src
 
-
 ** Trailing whitespace
 Trailing whitespace display and management
 #+begin_src emacs-lisp
@@ -60,7 +59,6 @@ Trailing whitespace display and management
 (add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+end_src
-
 
 ** Backup files
 Store every backup fils in ~/.emacs.d/backups.
@@ -86,7 +84,6 @@ Store every backup fils in ~/.emacs.d/backups.
     (smartparens-global-mode t)))
 
 #+end_src
-
 
 ** Minibuffer
 *** Ivy
@@ -131,7 +128,6 @@ Smex is an M-x alternative
   :init (smex-initialize))
 #+end_src
 
-
 ** which-key
 #+begin_src emacs-lisp
 
@@ -141,7 +137,6 @@ Smex is an M-x alternative
   :init (which-key-mode 1))
 
 #+end_src
-
 
 * Coding
 ** Project management
@@ -287,7 +282,7 @@ Highlight uncommitted lines
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 #+end_src
 * Org
-
+** General
 #+begin_src emacs-lisp
 (use-package org
   :mode (("\\.org$" . org-mode))
@@ -337,7 +332,6 @@ Highlight source-blocks
   )
 
 #+end_src
-
 
 * Work in progress
 ** Close compile on success

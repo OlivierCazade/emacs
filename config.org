@@ -1,4 +1,5 @@
-* Theme
+* General
+** Theme
 
 #+begin_src emacs-lisp
 (use-package ample-theme
@@ -8,7 +9,7 @@
   :ensure t)
 #+end_src
 
-* Global
+** Preferences
 #+begin_src emacs-lisp
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -31,14 +32,6 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
       ";; - 'Tis but a scratch!\n;; - A scratch? Your arm's off!\n;; - No, it isn't!\n\n")
 #+end_src
 
-Trailing whitespace display and management
-#+begin_src emacs-lisp
-(setq-default show-trailing-whitespace t)
-(add-hook 'diff-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-#+end_src
-
 #+begin_src emacs-lisp
 (use-package exec-path-from-shell
   :ensure t
@@ -49,6 +42,23 @@ Trailing whitespace display and management
   (exec-path-from-shell-copy-env "PATH")
   (when (memq window-system '(mac ns x))
     (exec-path-from-shell-initialize)))
+#+end_src
+
+*** Mac customization
+#+begin_src emacs-lisp
+(when (eq system-type 'darwin)
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier nil))
+#+end_src
+
+
+** Trailing whitespace
+Trailing whitespace display and management
+#+begin_src emacs-lisp
+(setq-default show-trailing-whitespace t)
+(add-hook 'diff-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+end_src
 
 
@@ -65,7 +75,7 @@ Store every backup fils in ~/.emacs.d/backups.
  version-control t)       ; use versioned backups
 #+end_src
 
-** smartparens
+** Parenthesis
 #+begin_src emacs-lisp
 
 (use-package smartparens
@@ -77,56 +87,9 @@ Store every backup fils in ~/.emacs.d/backups.
 
 #+end_src
 
-** Mac customization
-#+begin_src emacs-lisp
-(when (eq system-type 'darwin)
-  (setq mac-command-modifier 'meta)
-  (setq mac-option-modifier nil))
-#+end_src
 
-* Org
-
-#+begin_src emacs-lisp
-(use-package org
-  :mode (("\\.org$" . org-mode))
-  :ensure t
-  :defer t
-  :init
-  (progn
-    (setq org-log-done t)
-    )
-  :bind
-  ("C-c a" . org-agenda)
-  )
-#+end_src
-
-** Org-babel
-
-Highlight source-blocks
-
-#+begin_src emacs-lisp
-(setq org-src-fontify-natively t)
-#+end_src
-
-* Python
-
-#+begin_src emacs-lisp
-(setq py-python-command "python3")
-
-(use-package elpy
-  :ensure t
-  :init (elpy-enable))
-#+end_src
-
-* C
-#+begin_src emacs-lisp
-(setq c-default-style "linux"
-      c-basic-offset 4
-      tab-width 4
-      indent-tabs-mode t)
-#+end_src
-
-* Ivy
+** Minibuffer
+*** Ivy
 #+begin_src emacs-lisp
 (use-package ivy :ensure t
   :diminish (ivy-mode . "")
@@ -159,7 +122,7 @@ Highlight source-blocks
   )
 #+end_src
 
-** smex
+*** smex
 Smex is an M-x alternative
 #+begin_src emacs-lisp
 (use-package smex
@@ -168,28 +131,20 @@ Smex is an M-x alternative
   :init (smex-initialize))
 #+end_src
 
-* Git
+
+** which-key
 #+begin_src emacs-lisp
-(use-package magit
+
+(use-package which-key
   :ensure t
   :defer t
-  :init
-  (global-set-key (kbd "C-x g") 'magit-status)
-  (setq magit-completing-read-function 'ivy-completing-read)
-  )
+  :init (which-key-mode 1))
+
 #+end_src
 
-Highlight uncommitted lines
-#+begin_src emacs-lisp
-(use-package diff-hl
-  :ensure t
-  :defer t
-  :init
-  (global-diff-hl-mode 1)
-  )
-#+end_src
 
-** projectile
+* Coding
+** Project management
 #+begin_src emacs-lisp
 ;; projectile
 (use-package projectile
@@ -212,8 +167,13 @@ Highlight uncommitted lines
         (ibuffer-do-sort-by-alphabetic)))))
 #+end_src
 
+** Indent
+#+begin_src emacs-lisp
+(setq      tab-width 4
+      indent-tabs-mode t)
+#+end_src
 
-* Aggressive-indent
+
 #+begin_src emacs-lisp
 (use-package aggressive-indent
   :ensure t
@@ -223,54 +183,28 @@ Highlight uncommitted lines
   ;;  (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
   )
 #+end_src
-
-
-* Yaml
+** Git
 #+begin_src emacs-lisp
-
-(use-package yaml-mode
-  :ensure t
-  :defer t
-  )
-
-#+end_src
-* flyspell
-#+begin_src emacs-lisp
-(use-package flyspell
+(use-package magit
   :ensure t
   :defer t
   :init
-  (progn
-    (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-    (add-hook 'text-mode-hook 'flyspell-mode)
-    )
-  :config
-  ;; Sets flyspell correction to use two-finger mouse click
-  (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (setq magit-completing-read-function 'ivy-completing-read)
   )
 #+end_src
-* Tramp
-#+begin_src emacs-lisp
 
-(use-package tramp
+Highlight uncommitted lines
+#+begin_src emacs-lisp
+(use-package diff-hl
   :ensure t
   :defer t
   :init
-  (setq tramp-default-method "ssh")
+  (global-diff-hl-mode 1)
   )
-
 #+end_src
 
-* which-key
-#+begin_src emacs-lisp
-
-(use-package which-key
-  :ensure t
-  :defer t
-  :init (which-key-mode 1))
-
-#+end_src
-* flycheck
+** Syntax checking
 #+begin_src emacs-lisp
 
 (setq fill-column 80)
@@ -285,7 +219,32 @@ Highlight uncommitted lines
 
 #+end_src
 
-* markdown
+** Python
+
+#+begin_src emacs-lisp
+(setq py-python-command "python3")
+
+(use-package elpy
+  :ensure t
+  :init (elpy-enable))
+#+end_src
+
+** C
+#+begin_src emacs-lisp
+(setq c-default-style "linux"
+      c-basic-offset 4)
+#+end_src
+
+** Yaml
+#+begin_src emacs-lisp
+
+(use-package yaml-mode
+  :ensure t
+  :defer t
+  )
+
+#+end_src
+** markdown
 #+begin_src emacs-lisp
 
 (use-package markdown-mode
@@ -295,7 +254,7 @@ Highlight uncommitted lines
 
 #+end_src
 
-* ansible
+** ansible
 #+begin_src emacs-lisp
 
 (use-package ansible
@@ -307,7 +266,7 @@ Highlight uncommitted lines
 
 #+end_src
 
-* dockerfile
+** dockerfile
 #+begin_src emacs-lisp
 
 (use-package dockerfile-mode
@@ -319,7 +278,7 @@ Highlight uncommitted lines
 
 #+end_src
 
-* terraform
+** terraform
 #+begin_src emacs-lisp
 (use-package terraform-mode
   :ensure t
@@ -327,6 +286,59 @@ Highlight uncommitted lines
   :init
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 #+end_src
+* Org
+
+#+begin_src emacs-lisp
+(use-package org
+  :mode (("\\.org$" . org-mode))
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (setq org-log-done t)
+    )
+  :bind
+  ("C-c a" . org-agenda)
+  )
+#+end_src
+
+** Org-babel
+
+Highlight source-blocks
+
+#+begin_src emacs-lisp
+(setq org-src-fontify-natively t)
+#+end_src
+
+* Misc
+** flyspell
+#+begin_src emacs-lisp
+(use-package flyspell
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (add-hook 'prog-mode-hook 'flyspell-prog-mode)
+    (add-hook 'text-mode-hook 'flyspell-mode)
+    )
+  :config
+  ;; Sets flyspell correction to use two-finger mouse click
+  (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
+  )
+#+end_src
+** Tramp
+#+begin_src emacs-lisp
+
+(use-package tramp
+  :ensure t
+  :defer t
+  :init
+  (setq tramp-default-method "ssh")
+  )
+
+#+end_src
+
+
 * Work in progress
 ** Close compile on success
 #+begin_src emacs-lisp

@@ -348,3 +348,8 @@ Highlight source-blocks
 (add-to-list 'compilation-finish-functions
 	     'notify-compilation-result)
 #+end_src
+** REST client
+#+BEGIN_SRC emacs-lisp
+  (use-package restclient
+    :ensure t)
+#+END_SRC

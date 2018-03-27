@@ -189,15 +189,15 @@ Smex is an M-x alternative
   )
 #+end_src
 
-Highlight uncommitted lines
-#+begin_src emacs-lisp
-(use-package diff-hl
-  :ensure t
-  :defer t
-  :init
-  (global-diff-hl-mode 1)
-  )
-#+end_src
+# Highlight uncommitted changes
+
+#+BEGIN_SRC emacs-lisp
+  (use-package git-gutter
+    :ensure t
+    :config
+    (global-git-gutter-mode 't)
+    :diminish git-gutter-mode)
+#+END_SRC
 
 ** Syntax checking
 #+begin_src emacs-lisp

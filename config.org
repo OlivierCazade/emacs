@@ -361,3 +361,8 @@ Highlight source-blocks
     :ensure t
     :bind ("C-=" . er/expand-region))
 #+END_SRC
+* Credits
+Parts of this configuration have been copied from online configuration put by other people, thanks to them :
+ - [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]]
+ - [[https://github.com/jamiecollinson/dotfiles/blob/master/config.org/][Jamie Collinson]]
+ - [[https://github.com/angrybacon/dotemacs][Mathieu Marques]]

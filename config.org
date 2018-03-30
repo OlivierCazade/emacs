@@ -78,6 +78,7 @@ Store every backup fils in ~/.emacs.d/backups.
 
 (use-package smartparens
   :ensure t
+  :delight smartparens-mode
   :init
   (progn
     (require 'smartparens-config)
@@ -89,7 +90,7 @@ Store every backup fils in ~/.emacs.d/backups.
 *** Ivy
 #+begin_src emacs-lisp
 (use-package ivy :ensure t
-  :diminish (ivy-mode . "")
+  :delight ivy-mode
   :init
   (ivy-mode 1)
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
@@ -134,6 +135,7 @@ Smex is an M-x alternative
 (use-package which-key
   :ensure t
   :defer t
+  :delight which-key-mode
   :init (which-key-mode 1))
 
 #+end_src
@@ -143,7 +145,7 @@ Smex is an M-x alternative
 #+begin_src emacs-lisp
 ;; projectile
 (use-package projectile
-  :diminish projectile-mode
+  :delight projectile-mode
   :init
   (projectile-global-mode)
   :bind ("M-<tab>" . projectile-find-file))
@@ -196,7 +198,7 @@ Smex is an M-x alternative
     :ensure t
     :config
     (global-git-gutter-mode 't)
-    :diminish git-gutter-mode)
+    :delight git-gutter-mode)
 #+END_SRC
 
 ** Syntax checking
@@ -205,6 +207,7 @@ Smex is an M-x alternative
 (setq fill-column 80)
 (use-package flycheck
   :ensure t
+  :delight flycheck-mode
   :defer t
   :init
   (global-flycheck-mode)
@@ -221,6 +224,7 @@ Smex is an M-x alternative
 
 (use-package elpy
   :ensure t
+  :delight elpy-mode
   :init (elpy-enable))
 #+end_src
 
@@ -311,6 +315,7 @@ Highlight source-blocks
 (use-package flyspell
   :ensure t
   :defer t
+  :delight flyspell-mode
   :init
   (progn
     (add-hook 'prog-mode-hook 'flyspell-prog-mode)
@@ -361,6 +366,13 @@ Highlight source-blocks
     :ensure t
     :bind ("C-=" . er/expand-region))
 #+END_SRC
+** Delight
+#+BEGIN_SRC emacs-lisp
+(use-package delight
+  :ensure t
+)
+#+END_SRC
+
 * Credits
 Parts of this configuration have been copied from online configuration put by other people, thanks to them :
  - [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]]

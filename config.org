@@ -366,6 +366,15 @@ Highlight source-blocks
     :ensure t
     :bind ("C-=" . er/expand-region))
 #+END_SRC
+** Google this
+Bindings to launch google searches. All functions are bound under C-c /
+#+BEGIN_SRC emacs-lisp
+  (use-package google-this
+    :delight google-this-mode
+    :init
+    (google-this-mode)
+    :ensure t)
+#+END_SRC
 ** Delight
 #+BEGIN_SRC emacs-lisp
 (use-package delight

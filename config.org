@@ -170,16 +170,6 @@ Smex is an M-x alternative
       indent-tabs-mode t)
 #+end_src
 
-
-#+begin_src emacs-lisp
-(use-package aggressive-indent
-  :ensure t
-  :defer t
-  :init
-  (global-aggressive-indent-mode 1)
-  ;;  (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
-  )
-#+end_src
 ** Git
 #+begin_src emacs-lisp
 (use-package magit
@@ -381,7 +371,6 @@ Bindings to launch google searches. All functions are bound under C-c /
   :ensure t
 )
 #+END_SRC
-
 * Credits
 Parts of this configuration have been copied from online configuration put by other people, thanks to them :
  - [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]]

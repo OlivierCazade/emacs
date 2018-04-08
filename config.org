@@ -346,6 +346,7 @@ Highlight source-blocks
 ** REST client
 #+BEGIN_SRC emacs-lisp
   (use-package restclient
+    :mode "\\.http$"
     :ensure t)
 #+END_SRC
 

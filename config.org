@@ -1,3 +1,4 @@
+
 * General
 ** Theme
 
@@ -211,6 +212,7 @@ Smex is an M-x alternative
 
 #+begin_src emacs-lisp
 (setq py-python-command "python3")
+(setq elpy-rpc-python-command "python3")
 
 (use-package elpy
   :ensure t

@@ -2,6 +2,7 @@ auto-save-list/
 backups/
 config.el
 elpa/
+url/
 network-security.data
 projectile-bookmarks.eld
 recentf

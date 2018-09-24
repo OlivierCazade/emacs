@@ -209,7 +209,9 @@ Smex is an M-x alternative
 #+end_src
 
 ** Python
-
+Usefull bindings:
+ M-. Go to definition
+ M-* Go back to the last place M-. was used
 #+begin_src emacs-lisp
 (setq py-python-command "python3")
 (setq elpy-rpc-python-command "python3")

@@ -6,9 +6,16 @@
 (require 'package)
 (setq package-archives
       (append package-archives
+	      '(("melpa-stable" . "http://stable.melpa.org/packages/"))
 	      '(("melpa" . "http://melpa.org/packages/"))
 	      '(("org" . "http://orgmode.org/elpa/"))))
 (package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
+(setq package-archive-priorities
+      '(("melpa-stable" . 15)
+        ("org" . 10)
+	("melpa" . 5)))
 (setq package-enable-at-startup nil)
 
 ;; Use-package conf
@@ -31,7 +38,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (exec-path-from-shell terraform-mode dockerfile-mode smartparens ansible markdown-mode which-key flycheck smex diff-hl aggressive-indent yaml-mode elpy counsel ivy magit projectile ample-theme use-package))))
+    (feature-mode tide use-package yaml-mode which-key terraform-mode smex smartparens restclient prettier-js markdown-mode magit ibuffer-projectile google-this expand-region exec-path-from-shell elpy dockerfile-mode diminish delight counsel bind-key ansible ample-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

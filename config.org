@@ -154,8 +154,9 @@ Smex is an M-x alternative
 (use-package projectile
   :delight projectile-mode
   :init
-  (projectile-global-mode)
+  (projectile-mode)
   :bind ("M-<tab>" . projectile-find-file))
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 #+end_src
 
 

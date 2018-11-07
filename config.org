@@ -219,6 +219,8 @@ Smex is an M-x alternative
 Usefull bindings:
  M-. Go to definition
  M-* Go back to the last place M-. was used
+
+Use M-x elpy-config to check required binaries
 #+begin_src emacs-lisp
 (setq py-python-command "python3")
 (setq elpy-rpc-python-command "python3")
@@ -226,7 +228,14 @@ Usefull bindings:
 (use-package elpy
   :ensure t
   :delight elpy-mode
-  :init (elpy-enable))
+  :init
+  (elpy-enable))
+
+(use-package blacken
+  :ensure t
+  :defer t
+  :init
+  (add-hook `python-mode-hook `blacken-mode))
 #+end_src
 
 ** C

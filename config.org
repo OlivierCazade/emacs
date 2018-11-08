@@ -413,3 +413,4 @@ Parts of this configuration have been copied from online configuration put by ot
  - [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]]
  - [[https://github.com/jamiecollinson/dotfiles/blob/master/config.org/][Jamie Collinson]]
  - [[https://github.com/angrybacon/dotemacs][Mathieu Marques]]
+ - [[http://www.bartuka.com/pages-output/personal-emacs-configuration/][Bartuka]]

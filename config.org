@@ -295,6 +295,16 @@ Use M-x elpy-config to check required binaries
   :init
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 #+end_src
+
+** Shell
+#+begin_src emacs-lisp
+(use-package flymake-shellcheck
+  :ensure t
+  :init
+  (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
+  (add-hook 'sh-mode-hook 'flymake-mode))
+#+end_src
+
 * Org
 ** General
 #+begin_src emacs-lisp

@@ -447,6 +447,19 @@ Code navigation
 
 #+end_src
 
+** Completion
+
+#+begin_src emacs-lisp
+
+(use-package company
+  :ensure t
+  :config
+    (setq company-idle-delay 0)
+    (setq company-minimum-prefix-length 3)
+    (global-company-mode t))
+
+#+end_src
+
 * Credits
 Parts of this configuration have been copied from online configuration put by other people, thanks to them :
  - [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]]

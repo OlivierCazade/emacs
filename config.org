@@ -200,22 +200,6 @@ Smex is an M-x alternative
     :delight git-gutter-mode)
 #+END_SRC
 
-** Syntax checking
-#+begin_src emacs-lisp
-
-(setq fill-column 80)
-(use-package flycheck
-  :ensure t
-  :delight flycheck-mode
-  :defer t
-  :init
-  (global-flycheck-mode)
-  )
-
-(setq flycheck-python-pycompile-executable "python3")
-
-#+end_src
-
 ** Python
 Usefull bindings:
  M-. Go to definition

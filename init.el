@@ -38,7 +38,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (feature-mode tide use-package yaml-mode which-key terraform-mode smex smartparens restclient prettier-js markdown-mode magit ibuffer-projectile google-this expand-region exec-path-from-shell elpy dockerfile-mode diminish delight counsel bind-key ansible ample-theme))))
+    (feature-mode use-package yaml-mode which-key terraform-mode smex smartparens restclient markdown-mode magit ibuffer-projectile google-this expand-region exec-path-from-shell elpy dockerfile-mode delight counsel bind-key ansible ample-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

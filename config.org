@@ -448,7 +448,7 @@ Code navigation
 ** org-reveal
 ** org-super-agenda
 * Credits
-Parts of this configuration have been copied from online configuration put by other people, thanks to them :
+Thanks to these persons for sharing their configuration :
  - [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]]
  - [[https://github.com/jamiecollinson/dotfiles/blob/master/config.org/][Jamie Collinson]]
  - [[https://github.com/angrybacon/dotemacs][Mathieu Marques]]

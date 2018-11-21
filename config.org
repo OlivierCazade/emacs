@@ -86,6 +86,7 @@ Store every backup fils in ~/.emacs.d/backups.
 
 (use-package smartparens
   :ensure t
+  :defer t
   :delight smartparens-mode
   :init
   (progn
@@ -99,6 +100,7 @@ Store every backup fils in ~/.emacs.d/backups.
 #+begin_src emacs-lisp
 (use-package ivy :ensure t
   :delight ivy-mode
+  :defer t
   :init
   (ivy-mode 1)
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
@@ -121,6 +123,7 @@ Store every backup fils in ~/.emacs.d/backups.
 
 (use-package counsel
   :ensure t
+  :defer t
   :bind
   (("M-x" . counsel-M-x)
    ("C-s" . swiper)
@@ -154,6 +157,7 @@ Smex is an M-x alternative
 ;; projectile
 (use-package projectile
   :delight projectile-mode
+  :defer t
   :init
   (projectile-mode)
   :bind ("M-<tab>" . projectile-find-file))
@@ -165,6 +169,7 @@ Smex is an M-x alternative
 ;; projectile
 (use-package ibuffer-projectile
   :bind ("C-x C-b" . ibuffer)
+  :defer t
   :init
  (add-hook 'ibuffer-hook
     (lambda ()
@@ -195,6 +200,7 @@ Smex is an M-x alternative
 #+BEGIN_SRC emacs-lisp
   (use-package git-gutter
     :ensure t
+    :defer t
     :config
     (global-git-gutter-mode 't)
     :delight git-gutter-mode)
@@ -212,6 +218,7 @@ Use M-x elpy-config to check required binaries
 
 (use-package elpy
   :ensure t
+  :defer t
   :delight elpy-mode
   :init
   (elpy-enable))
@@ -271,6 +278,7 @@ Use M-x elpy-config to check required binaries
 #+begin_src emacs-lisp
 (use-package terraform-mode
   :ensure t
+  :defer t
   :mode "\\.tf$"
   :init
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
@@ -280,6 +288,7 @@ Use M-x elpy-config to check required binaries
 #+begin_src emacs-lisp
 (use-package flymake-shellcheck
   :ensure t
+  :defer t
   :init
   (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
   (add-hook 'sh-mode-hook 'flymake-mode))
@@ -357,6 +366,7 @@ Highlight source-blocks
 #+BEGIN_SRC emacs-lisp
   (use-package restclient
     :mode "\\.http$"
+    :defer t
     :ensure t)
 #+END_SRC
 
@@ -365,6 +375,7 @@ Highlight source-blocks
 #+BEGIN_SRC emacs-lisp
   (use-package expand-region
     :ensure t
+    :defer t
     :bind ("C-=" . er/expand-region))
 #+END_SRC
 ** Google this
@@ -372,6 +383,7 @@ Bindings to launch google searches. All functions are bound under C-c /
 #+BEGIN_SRC emacs-lisp
   (use-package google-this
     :delight google-this-mode
+    :defer t
     :init
     (google-this-mode)
     :ensure t)
@@ -382,6 +394,7 @@ Bindings to launch google searches. All functions are bound under C-c /
 #+begin_src emacs-lisp
   (use-package js2-mode
     :ensure t
+    :defer t
     :mode (("\\.js$" . js2-mode)
   ))
 #+end_src
@@ -390,6 +403,7 @@ React mode
 #+begin_src emacs-lisp
   (use-package rjsx-mode
     :ensure t
+    :defer t
     :mode (("\\.jsx$'" . rjsx-mode)))
 #+end_src
 
@@ -404,7 +418,9 @@ Code navigation
            (lambda ()
 	   (define-key js2-mode-map (kbd "M-.") nil)
              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
-    :ensure t)
+    :ensure t
+    :defer t
+  )
 #+end_src
 
 
@@ -412,6 +428,7 @@ Code navigation
 #+BEGIN_SRC emacs-lisp
   (use-package format-all
     :ensure t
+    :defer t
     :init
       (add-hook 'js2-mode-hook 'format-all-mode)
       (add-hook 'web-mode-hook 'format-all-mode)
@@ -437,6 +454,7 @@ Code navigation
 
 (use-package company
   :ensure t
+  :defer t
   :config
     (setq company-idle-delay 0)
     (setq company-minimum-prefix-length 3)

@@ -296,6 +296,12 @@ Use M-x elpy-config to check required binaries
 
 * Org
 ** General
+Global shortcuts :
+C-c a org-agenda
+
+In org-mode
+C-c C-c on an Headline to add tag
+C-c C-t to toggle TODO
 #+begin_src emacs-lisp
 (use-package org
   :mode (("\\.org$" . org-mode))

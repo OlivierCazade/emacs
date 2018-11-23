@@ -14,7 +14,7 @@
 	       (enable-theme 'ample))
   :defer t
   :ensure t)
- (set-face-attribute 'default nil :font "Hack 12")
+ (set-face-attribute 'default nil :font "Hack 14")
 #+end_src
 
 ** Preferences

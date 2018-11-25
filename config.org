@@ -310,9 +310,9 @@ C-c C-t to toggle TODO
   :ensure t
   :defer t
   :init
-  (progn
-    (setq org-log-done t)
-    )
+  (setq org-log-done t)
+  (setq ord-directory (expand-file-name "~/org/"))
+  (setq org-agenda-files (list org-directory))
   :bind
   ("C-c a" . org-agenda)
   )

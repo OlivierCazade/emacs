@@ -326,6 +326,13 @@ Highlight source-blocks
 (setq org-src-fontify-natively t)
 #+end_src
 
+** Org-capture
+
+#+begin_src emacs-lisp
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+(define-key global-map "\C-cc" 'org-capture)
+#+end_src
+
 * Misc
 ** flyspell
 #+begin_src emacs-lisp

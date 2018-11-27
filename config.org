@@ -205,6 +205,7 @@ Smex is an M-x alternative
     :defer t
     :config
     (global-git-gutter-mode 't)
+    (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
     :delight git-gutter-mode)
 #+END_SRC
 

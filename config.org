@@ -162,7 +162,7 @@ Smex is an M-x alternative
   :defer t
   :init
   (projectile-mode)
-  :bind ("M-<tab>" . projectile-find-file))
+  :bind ("C-x f" . projectile-find-file))
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 #+end_src
 

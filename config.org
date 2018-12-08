@@ -335,6 +335,8 @@ Highlight source-blocks
 (setq org-capture-templates
  '(("t" "Todo" entry (file+headline "~/org/notes.org" "Tasks")
         "* TODO %?\nADDED: %U" :empty-lines 1)
+   ("T" "Todo with deadline" entry (file+headline "~/org/notes.org" "Tasks")
+        "* TODO %?\nSCHEDULED: %^t\nADDED: %U" :empty-lines 1 :time-prompt t)
   ))
 #+end_src
 

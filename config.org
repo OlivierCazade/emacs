@@ -337,6 +337,8 @@ Highlight source-blocks
         "* TODO %?\nADDED: %U" :empty-lines 1)
    ("T" "Todo with deadline" entry (file+headline "~/org/notes.org" "Tasks")
         "* TODO %?\nSCHEDULED: %^t\nADDED: %U" :empty-lines 1 :time-prompt t)
+   ("a" "Appointment" entry (file+headline "~/org/notes.org" "Tasks")
+        "* %?\nADDED: %U\n%^T" :empty-lines 1 :time-prompt t)
   ))
 #+end_src
 

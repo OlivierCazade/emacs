@@ -244,6 +244,8 @@ Use M-x elpy-config to check required binaries
 
 #+end_src
 ** markdown
+C-c C-c l : live preview mode
+
 #+begin_src emacs-lisp
 
 (use-package markdown-mode

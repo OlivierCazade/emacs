@@ -308,6 +308,7 @@ In org-mode
 C-c C-c on an Headline to add tag
 C-c C-t to toggle TODO
 C-c C-s to add a scheduled date
+C-c C-d to add a deadline
 #+begin_src emacs-lisp
 (use-package org
   :mode (("\\.org$" . org-mode))

@@ -304,11 +304,18 @@ C-c C-c l : live preview mode
 Global shortcuts :
 C-c a org-agenda
 
-In org-mode
+In org-mode :
 C-c C-c on an Headline to add tag
 C-c C-t to toggle TODO
 C-c C-s to add a scheduled date
 C-c C-d to add a deadline
+
+In org-agenda :
+f Next time span
+b Previous time span
+. Go to today
+k capture
+l Toggle logbook mode (ex: Display Done tasks)
 #+begin_src emacs-lisp
 (use-package org
   :mode (("\\.org$" . org-mode))

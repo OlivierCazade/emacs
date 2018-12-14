@@ -344,11 +344,11 @@ Highlight source-blocks
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
- '(("t" "Todo" entry (file+headline "~/org/notes.org" "Tasks")
+ '(("t" "Todo" entry (file+datetree "~/org/notes.org")
         "* TODO %?\nADDED: %U" :empty-lines 1)
-   ("T" "Todo with deadline" entry (file+headline "~/org/notes.org" "Tasks")
+   ("T" "Todo with deadline" entry (file+datetree "~/org/notes.org")
         "* TODO %?\nSCHEDULED: %^t\nADDED: %U" :empty-lines 1 :time-prompt t)
-   ("a" "Appointment" entry (file+headline "~/org/notes.org" "Tasks")
+   ("a" "Appointment" entry (file+datetree "~/org/notes.org")
         "* %?\nADDED: %U\n%^T" :empty-lines 1 :time-prompt t)
   ))
 #+end_src

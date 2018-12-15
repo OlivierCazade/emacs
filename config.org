@@ -155,6 +155,10 @@ Smex is an M-x alternative
 
 * Coding
 ** Project management
+Bindings :
+C-p p p : projectile-switch-project
+C-x f or C-p p f : projectile-find-file
+
 #+begin_src emacs-lisp
 ;; projectile
 (use-package projectile

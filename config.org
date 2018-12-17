@@ -411,6 +411,9 @@ Highlight source-blocks
 
 ** Easier selection
 
+Bindinds :
+C-= : expand-regine
+
 #+BEGIN_SRC emacs-lisp
   (use-package expand-region
     :ensure t

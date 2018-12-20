@@ -303,6 +303,42 @@ C-c C-c l : live preview mode
   (add-hook 'sh-mode-hook 'flymake-mode))
 #+end_src
 
+** Web
+*** Javascript
+
+#+begin_src emacs-lisp
+  (use-package js2-mode
+    :ensure t
+    :defer t
+    :mode (("\\.js$" . js2-mode)
+  ))
+#+end_src
+
+React mode
+#+begin_src emacs-lisp
+  (use-package rjsx-mode
+    :ensure t
+    :defer t
+    :mode (("\\.jsx$'" . rjsx-mode)))
+#+end_src
+
+Code navigation
+
+#+begin_src emacs-lisp
+  (use-package xref-js2
+    :init
+
+    (add-hook
+           'js2-mode-hook
+           (lambda ()
+	   (define-key js2-mode-map (kbd "M-.") nil)
+             (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+    :ensure t
+    :defer t
+  )
+#+end_src
+
+
 * Org
 ** General
 Global bindings :

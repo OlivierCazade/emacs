@@ -356,6 +356,8 @@ b Previous time span
 . Go to today
 k capture
 l Toggle logbook mode (ex: Display Done tasks)
+} or ] Display inactive timestamp
+
 #+begin_src emacs-lisp
 (use-package org
   :mode (("\\.org$" . org-mode))

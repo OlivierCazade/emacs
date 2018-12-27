@@ -532,3 +532,4 @@ Thanks to these persons for sharing their configuration :
  - [[https://github.com/jamiecollinson/dotfiles/blob/master/config.org/][Jamie Collinson]]
  - [[https://github.com/angrybacon/dotemacs][Mathieu Marques]]
  - [[http://www.bartuka.com/pages-output/personal-emacs-configuration/][Bartuka]]
+ - [[http://doc.norang.ca/org-mode.html][Bernt Hansen]]

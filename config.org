@@ -359,17 +359,30 @@ l Toggle logbook mode (ex: Display Done tasks)
 } or ] Display inactive timestamp
 
 #+begin_src emacs-lisp
-(use-package org
-  :mode (("\\.org$" . org-mode))
-  :ensure t
-  :defer t
-  :init
-  (setq org-log-done t)
-  (setq ord-directory (expand-file-name "~/org/"))
-  (setq org-agenda-files (list org-directory))
-  :bind
-  ("C-c a" . org-agenda)
-  )
+  (use-package org
+    :mode (("\\.org$" . org-mode))
+    :ensure t
+    :defer t
+    :init
+    ;; (setq org-log-done t)
+    (setq ord-directory (expand-file-name "~/org/"))
+    (setq org-agenda-files (list org-directory))
+    :bind
+    ("C-c a" . org-agenda)
+    )
+
+  (setq org-todo-keywords
+	(quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+		(sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
+  (setq org-todo-keyword-faces
+	(quote (("TODO" :foreground "red" :weight bold)
+		("NEXT" :foreground "blue" :weight bold)
+		("DONE" :foreground "forest green" :weight bold)
+		("WAITING" :foreground "orange" :weight bold)
+		("HOLD" :foreground "magenta" :weight bold)
+		("CANCELLED" :foreground "forest green" :weight bold)
+		("MEETING" :foreground "forest green" :weight bold)
+		("PHONE" :foreground "forest green" :weight bold))))
 #+end_src
 
 ** Org-babel

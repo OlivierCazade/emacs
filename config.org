@@ -357,6 +357,7 @@ b Previous time span
 k capture
 l Toggle logbook mode (ex: Display Done tasks)
 } or ] Display inactive timestamp
+S-right/left Folowwing/preceding TODO state
 
 #+begin_src emacs-lisp
   (use-package org

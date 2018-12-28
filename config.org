@@ -99,6 +99,8 @@ Store every backup fils in ~/.emacs.d/backups.
 
 ** Minibuffer
 *** Ivy
+Bindings in ivy :
+C-M-j : ivy-immediate-done (use exactly what has been written)
 #+begin_src emacs-lisp
 (use-package ivy :ensure t
   :delight ivy-mode

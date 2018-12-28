@@ -409,7 +409,7 @@ Highlight source-blocks
    ("a" "Appointment" entry (file+datetree "~/org/notes.org")
         "* %?\nADDED: %U\n%^T" :empty-lines 1 :time-prompt t)
    ("i" "Inbox" entry (file "~/org/inbox.org")
-        "* TODO %?\nADDED: %U" :empty-lines 1)
+        "* %?" :empty-lines 1)
    ("l" "Log" entry (file+datetree "~/org/journal.org")
         "* %?\nADDED: %U" :empty-lines 1)
   ))

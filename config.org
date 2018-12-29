@@ -389,6 +389,15 @@ S-right/left Folowwing/preceding TODO state
 #+end_src
 
 ** Org-refile
+Because of ivy completion, we need to change refile complete behaviour.
+
+From [[https://blog.aaronbieber.com/2017/03/19/organizing-notes-with-refile.html][Aaron Bieber's blog]]
+#+begin_quote
+... the default behavior for Refile is to allow you to do a step-by-step completion of this path, but if you’re using Helm, Helm is overriding the completing read to make it into a narrowing list (that we have all come to love).
+
+So what you need to do is tell Org that you don’t want to complete in steps; you want Org to generate all of the possible completions and present them at once.
+#+end_quote
+
 #+begin_src emacs-lisp
   (setq org-refile-use-outline-path 'file)
   (setq org-outline-path-complete-in-steps nil)

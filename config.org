@@ -398,6 +398,9 @@ From [[https://blog.aaronbieber.com/2017/03/19/organizing-notes-with-refile.html
 So what you need to do is tell Org that you don’t want to complete in steps; you want Org to generate all of the possible completions and present them at once.
 #+end_quote
 
+Bindings :
+C-c C-w : org-refile
+
 #+begin_src emacs-lisp
   (setq org-refile-use-outline-path 'file)
   (setq org-outline-path-complete-in-steps nil)

@@ -409,6 +409,20 @@ C-c C-w : org-refile
                              ("someday.org" :level . 0)
                              ("reading.org" :level . 1)
                              ("projects.org" :maxlevel . 1)))
+
+#+end_src
+
+Auto-save after org-refile
+From [[https://emacs.stackexchange.com/questions/26923/org-mode-getting-errors-when-auto-saving-after-refiling/29180][stackexchange]]
+#+begin_src emacs-lisp
+  (defun my-org-refile (&optional goto default-buffer rfloc msg) (interactive "P") "Doc-string."
+    (org-refile goto default-buffer rfloc msg)
+    (org-save-all-org-buffers))
+  (global-set-key (kbd "C-c C-w") `my-org-refile)
+
+(add-hook 'org-mode-hook
+          (lambda () (local-set-key (kbd "C-c C-w") #'my-org-refile)))
+
 #+end_src
 
 ** Org-babel

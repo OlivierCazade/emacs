@@ -375,7 +375,7 @@ S-right/left Folowwing/preceding TODO state
     )
 
   (setq org-todo-keywords
-	(quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+	(quote ((sequence "TODO(t!)" "NEXT(n)" "|" "DONE(d!)")
 		(sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
   (setq org-todo-keyword-faces
 	(quote (("TODO" :foreground "red" :weight bold)

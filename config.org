@@ -340,6 +340,20 @@ Code navigation
   )
 #+end_src
 
+** Latex
+Bindings :
+C-c C-t C-p : toggle pdf mode
+C-c C-v : view document
+C-c C-c : master command
+C-c C-a : run all
+#+begin_src emacs-lisp
+(use-package tex
+  :ensure auctex
+  :init
+    (setq TeX-auto-save t)
+    (setq TeX-parse-self t)
+    (setq TeX-view-evince-keep-focus t))
+#+end_src
 
 * Org
 ** General

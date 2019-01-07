@@ -582,6 +582,8 @@ Bindings to launch google searches. All functions are bound under C-c /
 ** org-super-agenda
 ** Git forges
 https://emacsair.me/2018/12/19/forge-0.1/
+** Use :ensure-system-package from use-package
+
 * Auto update
 Periodically update package, default interval is 7 days.
 #+begin_src emacs-lisp

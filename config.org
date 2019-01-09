@@ -402,6 +402,12 @@ S-right/left Folowwing/preceding TODO state
 		("PHONE" :foreground "forest green" :weight bold))))
 #+end_src
 
+An task cannot be DONE if a subtask is not DONE :
+
+#+begin_src emacs-lisp
+(setq org-enforce-todo-dependencies t)
+#+end_src
+
 ** Org-refile
 Because of ivy completion, we need to change refile complete behaviour.
 

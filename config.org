@@ -155,6 +155,12 @@ Smex is an M-x alternative
 
 #+end_src
 
+** Emojis
+#+begin_src emacs-lisp
+(use-package emojify
+  :init (global-emojify-mode))
+#+end_src
+
 * Coding
 ** Project management
 Bindings :

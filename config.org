@@ -381,6 +381,14 @@ l Toggle logbook mode (ex: Display Done tasks)
 } or ] Display inactive timestamp
 S-right/left Folowwing/preceding TODO state
 
+About dates :
+#+begin_src
+<YYYY-MM-DD> is a timestamp, hit C-c C-c to normalize it
+[YYYY-MM-DD] is an inactive timestamp
+Repeater can be added to the timestamp ex: <YYYY-MM-DD +1w> everyweek
+++ and .+ are special repeater to use when the next occurence depends on when the previous occurence is switched to DONE
+#+end_src
+
 #+begin_src emacs-lisp
   (use-package org
     :mode (("\\.org$" . org-mode))

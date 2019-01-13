@@ -424,6 +424,14 @@ An task cannot be DONE if a subtask is not DONE :
 (setq org-enforce-todo-dependencies t)
 #+end_src
 
+
+Add log state into a drawer
+
+#+begin_src emacs-lisp
+(setq org-log-into-drawer t)
+(setq org-log-state-notes-insert-after-drawers nil)
+#+end_src
+
 ** Org-refile
 Because of ivy completion, we need to change refile complete behaviour.
 

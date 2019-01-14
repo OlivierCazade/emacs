@@ -424,6 +424,24 @@ An task cannot be DONE if a subtask is not DONE :
 (setq org-enforce-todo-dependencies t)
 #+end_src
 
+NEXT keywords are for tasks and not projects.
+Auto convert NEXT state to TODO when a subtask state is added.
+[[http://doc.norang.ca/org-mode.html#NextTasks][source]]
+
+#+begin_src emacs-lisp
+(defun bh/mark-next-parent-tasks-todo ()
+  "Visit each parent task and change NEXT states to TODO"
+  (let ((mystate (or (and (fboundp 'org-state)
+                          state)
+                     (nth 2 (org-heading-components)))))
+    (when mystate
+      (save-excursion
+        (while (org-up-heading-safe)
+          (when (member (nth 2 (org-heading-components)) (list "NEXT"))
+            (org-todo "TODO")))))))
+
+(add-hook 'org-after-todo-state-change-hook 'bh/mark-next-parent-tasks-todo 'append)
+#+end_src
 
 Add log state into a drawer
 

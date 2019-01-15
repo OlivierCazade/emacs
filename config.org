@@ -488,6 +488,21 @@ From [[https://emacs.stackexchange.com/questions/26923/org-mode-getting-errors-w
 
 #+end_src
 
+** Org-archive
+
+Bindings :
+C-c C-x C-s or short C-c $ : org-archive-subtree
+
+#+begin_src emacs-lisp
+(setq org-archive-location "~/org/journal.org::datetree/")
+  (defun my-org-archive-subtree (&optional find-done) (interactive "P") "Doc-string."
+    (org-archive-subtree find-done)
+    (org-save-all-org-buffers))
+
+(add-hook 'org-mode-hook
+          (lambda () (local-set-key (kbd "C-c C-x C-s") #'my-org-archive-subtree)))
+#+end_src
+
 ** Org-babel
 
 Highlight source-blocks

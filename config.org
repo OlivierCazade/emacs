@@ -397,13 +397,15 @@ Repeater can be added to the timestamp ex: <YYYY-MM-DD +1w> everyweek
     :ensure t
     :defer t
     :init
-    ;; (setq org-log-done t)
+    (setq org-log-done t)
     (setq ord-directory (expand-file-name "~/org/"))
     (setq org-agenda-files (list org-directory))
     :bind
     ("C-c a" . org-agenda)
     )
+#+end_src
 
+#+begin_src emacs-lisp
   (setq org-todo-keywords
 	(quote ((sequence "TODO(t!)" "NEXT(n)" "|" "DONE(d!)")
 		(sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))

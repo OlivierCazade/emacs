@@ -547,6 +547,7 @@ Highlight source-blocks
   (progn
     (add-hook 'prog-mode-hook 'flyspell-prog-mode)
     (add-hook 'text-mode-hook 'flyspell-mode)
+    (add-hook 'org-mode-hook 'flyspell-mode)
     )
   :config
   ;; Sets flyspell correction to use two-finger mouse click

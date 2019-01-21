@@ -650,7 +650,7 @@ Bindings to launch google searches. All functions are bound under C-c /
 
 * To try
 ** org-reveal
-** org-super-agenda
+** org-super-agenda or org-ql
 ** Git forges
 https://emacsair.me/2018/12/19/forge-0.1/
 ** Use :ensure-system-package from use-package

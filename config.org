@@ -582,6 +582,7 @@ Highlight source-blocks
 	     'notify-compilation-result)
 #+end_src
 ** REST client
+https://github.com/pashky/restclient.el
 #+BEGIN_SRC emacs-lisp
   (use-package restclient
     :mode "\\.http$"

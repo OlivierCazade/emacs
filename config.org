@@ -487,7 +487,6 @@ From [[https://emacs.stackexchange.com/questions/26923/org-mode-getting-errors-w
   (defun my-org-refile (&optional goto default-buffer rfloc msg) (interactive "P") "Doc-string."
     (org-refile goto default-buffer rfloc msg)
     (org-save-all-org-buffers))
-  (global-set-key (kbd "C-c C-w") `my-org-refile)
 
 (add-hook 'org-mode-hook
           (lambda () (local-set-key (kbd "C-c C-w") #'my-org-refile)))

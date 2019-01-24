@@ -45,7 +45,7 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
 #+begin_src emacs-lisp
 (use-package exec-path-from-shell
   :ensure t
-  :defer f
+  :defer t
   :init
   (exec-path-from-shell-copy-env "GOPATH")
   (exec-path-from-shell-copy-env "SHELL")

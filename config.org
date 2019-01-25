@@ -365,6 +365,20 @@ C-c C-a : run all
     (setq TeX-view-evince-keep-focus t))
 #+end_src
 
+** Compilation
+#+begin_src emacs-lisp
+  (use-package ansi-color
+    :defer t
+    :ensure t
+    :init
+    (defun colorize-compilation-buffer ()
+      (when (eq major-mode 'compilation-mode)
+      (ansi-color-apply-on-region compilation-filter-start (point-max))))
+      ;; (toggle-read-only)
+      ;; (ansi-color-apply-on-region compilation-filter-start (point))
+      ;; (toggle-read-only))
+    (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
+#+end_src
 * Org
 ** General
 Global bindings :

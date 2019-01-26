@@ -362,7 +362,8 @@ C-c C-a : run all
   :init
     (setq TeX-auto-save t)
     (setq TeX-parse-self t)
-    (setq TeX-view-evince-keep-focus t))
+    (setq TeX-view-evince-keep-focus t)
+    (add-hook 'LaTeX-mode-hook 'flymake-mode))
 #+end_src
 
 ** Compilation

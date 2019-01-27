@@ -625,18 +625,6 @@ Bindings to launch google searches. All functions are bound under C-c /
     (google-this-mode)
     :ensure t)
 #+END_SRC
-** Code format
-#+BEGIN_SRC emacs-lisp
-  (use-package format-all
-    :ensure t
-    :defer t
-    :init
-      (add-hook 'js2-mode-hook 'format-all-mode)
-      (add-hook 'web-mode-hook 'format-all-mode)
-      (add-hook 'css-mode-hook 'format-all-mode)
-      (add-hook 'python-mode-hook 'format-all-mode)
-  )
-#+END_SRC
 
 ** Cucumber
 #+begin_src emacs-lisp

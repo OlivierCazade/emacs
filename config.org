@@ -126,7 +126,13 @@ C-M-j : ivy-immediate-done (use exactly what has been written)
   ;; Do note show . and .. in files selction
   (setq ivy-extra-directories nil)
   )
+#+end_src
 
+*** Counsel
+Bindings and interesting commands :
+counsel-find-jump : from current directory, list recursively every file
+
+#+begin_src emacs-lisp
 (use-package counsel
   :ensure t
   :defer t

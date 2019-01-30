@@ -227,8 +227,8 @@ C-x f or C-p p f : projectile-find-file
   (use-package git-gutter
     :ensure t
     :defer t
-    :config
-    (global-git-gutter-mode 't)
+    :init
+    (global-git-gutter-mode t)
     (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
     :delight git-gutter-mode)
 #+END_SRC

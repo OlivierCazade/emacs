@@ -240,16 +240,15 @@ Usefull bindings:
 
 Use M-x elpy-config to check required binaries
 #+begin_src emacs-lisp
-(setq py-python-command "python3")
-(setq elpy-rpc-python-command "python3")
+ (use-package elpy
+    :ensure t
+    :defer t
+    :delight elpy-mode
+    :init
+    (elpy-enable))
 
-(use-package elpy
-  :ensure t
-  :defer t
-  :delight elpy-mode
-  :init
-  (elpy-enable))
-
+  (use-package pyenv-mode
+    :init (add-hook 'python-mode-hook 'pyenv-mode))
 #+end_src
 
 ** C

@@ -2,11 +2,14 @@
 * General
 ** General key binding
 C-x + : resize windows equally
+** Packages
+No need to set ensure to true for each package.
+#+BEGIN_SRC emacs-lisp
+(setq use-package-always-ensure t)
+#+END_SRC
 ** Delight
 #+BEGIN_SRC emacs-lisp
-(use-package delight
-  :ensure t
-)
+(use-package delight)
 #+END_SRC
 ** Theme
 
@@ -14,8 +17,7 @@ C-x + : resize windows equally
   (use-package ample-theme
     :init (progn (load-theme 'ample t t)
 		 (enable-theme 'ample))
-    :defer t
-    :ensure t)
+    :defer t)
    (set-face-attribute 'default nil :family "FuraCode Nerd Font Mono"  :height 140)
 #+end_src
 
@@ -44,7 +46,6 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
 
 #+begin_src emacs-lisp
 (use-package exec-path-from-shell
-  :ensure t
   :defer t
   :init
   (exec-path-from-shell-copy-env "GOPATH")
@@ -102,7 +103,7 @@ Store every backup fils in ~/.emacs.d/backups.
 Bindings in ivy :
 C-M-j : ivy-immediate-done (use exactly what has been written)
 #+begin_src emacs-lisp
-(use-package ivy :ensure t
+(use-package ivy
   :delight ivy-mode
   :defer t
   :init
@@ -134,7 +135,6 @@ counsel-find-jump : from current directory, list recursively every file
 
 #+begin_src emacs-lisp
 (use-package counsel
-  :ensure t
   :defer t
   :bind
   (("M-x" . counsel-M-x)
@@ -147,7 +147,6 @@ counsel-find-jump : from current directory, list recursively every file
 Smex is an M-x alternative
 #+begin_src emacs-lisp
 (use-package smex
-  :ensure t
   :defer t
   :init (smex-initialize))
 #+end_src
@@ -156,7 +155,6 @@ Smex is an M-x alternative
 #+begin_src emacs-lisp
 
 (use-package which-key
-  :ensure t
   :defer t
   :delight which-key-mode
   :init (which-key-mode 1))
@@ -213,7 +211,6 @@ C-x f or C-p p f : projectile-find-file
 ** Git
 #+begin_src emacs-lisp
 (use-package magit
-  :ensure t
   :defer t
   :init
   (global-set-key (kbd "C-x g") 'magit-status)
@@ -225,7 +222,6 @@ C-x f or C-p p f : projectile-find-file
 
 #+BEGIN_SRC emacs-lisp
   (use-package git-gutter
-    :ensure t
     :defer t
     :init
     (global-git-gutter-mode t)
@@ -241,7 +237,6 @@ Usefull bindings:
 Use M-x elpy-config to check required binaries
 #+begin_src emacs-lisp
  (use-package elpy
-    :ensure t
     :defer t
     :delight elpy-mode
     :init
@@ -261,7 +256,6 @@ Use M-x elpy-config to check required binaries
 #+begin_src emacs-lisp
 
 (use-package yaml-mode
-  :ensure t
   :defer t
   )
 
@@ -273,7 +267,6 @@ C-c C-c l : live preview mode
 
 (use-package markdown-mode
   :defer t
-  :ensure t
   )
 
 #+end_src
@@ -283,7 +276,6 @@ C-c C-c l : live preview mode
 
 (use-package ansible
   :defer t
-  :ensure t
   :init
   (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
   )
@@ -295,7 +287,6 @@ C-c C-c l : live preview mode
 
 (use-package dockerfile-mode
   :defer t
-  :ensure t
   :init
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
   )
@@ -305,7 +296,6 @@ C-c C-c l : live preview mode
 ** terraform
 #+begin_src emacs-lisp
 (use-package terraform-mode
-  :ensure t
   :defer t
   :mode "\\.tf$"
   :init
@@ -315,7 +305,6 @@ C-c C-c l : live preview mode
 ** Shell
 #+begin_src emacs-lisp
 (use-package flymake-shellcheck
-  :ensure t
   :defer t
   :init
   (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
@@ -327,7 +316,6 @@ C-c C-c l : live preview mode
 
 #+begin_src emacs-lisp
   (use-package js2-mode
-    :ensure t
     :defer t
     :mode (("\\.js$" . js2-mode)
   ))
@@ -336,7 +324,6 @@ C-c C-c l : live preview mode
 React mode
 #+begin_src emacs-lisp
   (use-package rjsx-mode
-    :ensure t
     :defer t
     :mode (("\\.jsx$'" . rjsx-mode)))
 #+end_src
@@ -352,7 +339,6 @@ Code navigation
            (lambda ()
 	   (define-key js2-mode-map (kbd "M-.") nil)
              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
-    :ensure t
     :defer t
   )
 #+end_src
@@ -377,7 +363,6 @@ C-c C-a : run all
 #+begin_src emacs-lisp
   (use-package ansi-color
     :defer t
-    :ensure t
     :init
     (defun colorize-compilation-buffer ()
       (when (eq major-mode 'compilation-mode)
@@ -420,7 +405,6 @@ Repeater can be added to the timestamp ex: <YYYY-MM-DD +1w> everyweek
 #+begin_src emacs-lisp
   (use-package org
     :mode (("\\.org$" . org-mode))
-    :ensure t
     :defer t
     :init
     (setq org-log-done t)
@@ -561,7 +545,6 @@ Highlight source-blocks
 ** flyspell
 #+begin_src emacs-lisp
 (use-package flyspell
-  :ensure t
   :defer t
   :delight flyspell-mode
   :init
@@ -579,7 +562,6 @@ Highlight source-blocks
 #+begin_src emacs-lisp
 
 (use-package tramp
-  :ensure t
   :defer t
   :init
   (setq tramp-default-method "ssh")
@@ -607,8 +589,7 @@ https://github.com/pashky/restclient.el
 #+BEGIN_SRC emacs-lisp
   (use-package restclient
     :mode "\\.http$"
-    :defer t
-    :ensure t)
+    :defer t)
 #+END_SRC
 
 ** Easier selection
@@ -618,7 +599,6 @@ C-= : expand-regine
 
 #+BEGIN_SRC emacs-lisp
   (use-package expand-region
-    :ensure t
     :defer t
     :bind ("C-=" . er/expand-region))
 #+END_SRC
@@ -629,15 +609,13 @@ Bindings to launch google searches. All functions are bound under C-c /
     :delight google-this-mode
     :defer t
     :init
-    (google-this-mode)
-    :ensure t)
+    (google-this-mode))
 #+END_SRC
 
 ** Cucumber
 #+begin_src emacs-lisp
 
 (use-package feature-mode
-  :ensure t
   :defer t
   :mode "\\.feature$"
   )
@@ -649,7 +627,6 @@ Bindings to launch google searches. All functions are bound under C-c /
 #+begin_src emacs-lisp
 
 (use-package company
-  :ensure t
   :defer t
   :config
     (setq company-idle-delay 0)

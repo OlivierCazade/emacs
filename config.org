@@ -570,20 +570,6 @@ Highlight source-blocks
 #+end_src
 
 * Work in progress
-** Close compile on success
-#+begin_src emacs-lisp
-
-(defun notify-compilation-result(buffer msg)
-  (if (string-match "^finished" msg)
-      (progn
-	(kill-this-buffer)))
-  (setq current-frame (car (car (cdr (current-frame-configuration)))))
-  (select-frame-set-input-focus current-frame)
-  )
-
-(add-to-list 'compilation-finish-functions
-	     'notify-compilation-result)
-#+end_src
 ** REST client
 https://github.com/pashky/restclient.el
 #+BEGIN_SRC emacs-lisp

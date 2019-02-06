@@ -159,6 +159,16 @@ Smex is an M-x alternative
   :init (which-key-mode 1))
 
 #+end_src
+** Easier selection
+
+Bindinds :
+C-= : expand-regine
+
+#+BEGIN_SRC emacs-lisp
+  (use-package expand-region
+    :defer t
+    :bind ("C-=" . er/expand-region))
+#+END_SRC
 
 ** Emoji
 
@@ -578,16 +588,6 @@ https://github.com/pashky/restclient.el
     :defer t)
 #+END_SRC
 
-** Easier selection
-
-Bindinds :
-C-= : expand-regine
-
-#+BEGIN_SRC emacs-lisp
-  (use-package expand-region
-    :defer t
-    :bind ("C-=" . er/expand-region))
-#+END_SRC
 ** Google this
 Bindings to launch google searches. All functions are bound under C-c /
 #+BEGIN_SRC emacs-lisp

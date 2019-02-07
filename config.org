@@ -143,7 +143,7 @@ counsel-find-jump : from current directory, list recursively every file
 #+end_src
 
 *** smex
-Smex is an M-x alternative
+Smex is an M-x alternative it display the recently and most frequently used commands.
 #+begin_src emacs-lisp
 (use-package smex
   :defer t

@@ -554,6 +554,8 @@ Highlight source-blocks
 
 * Misc
 ** flyspell
+Spell checking in emacs.
+
 #+begin_src emacs-lisp
 (use-package flyspell
   :defer t

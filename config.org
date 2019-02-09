@@ -198,7 +198,7 @@ C-x f or C-p p f : projectile-find-file
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 #+end_src
 
-
+Use projectile to group buffer per project in the iBuffer view.
 #+begin_src emacs-lisp
 ;; projectile
 (use-package ibuffer-projectile

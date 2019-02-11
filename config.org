@@ -572,6 +572,7 @@ Spell checking in emacs.
   )
 #+end_src
 ** Tramp
+Tramp is used to edit remote files
 #+begin_src emacs-lisp
 
 (use-package tramp

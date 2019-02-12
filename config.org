@@ -602,16 +602,6 @@ Bindings to launch google searches. All functions are bound under C-c /
     (google-this-mode))
 #+END_SRC
 
-** Cucumber
-#+begin_src emacs-lisp
-
-(use-package feature-mode
-  :defer t
-  :mode "\\.feature$"
-  )
-
-#+end_src
-
 ** Completion
 
 #+begin_src emacs-lisp

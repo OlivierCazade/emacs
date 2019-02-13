@@ -573,6 +573,12 @@ Spell checking in emacs.
 #+end_src
 ** Tramp
 Tramp is used to edit remote files
+
+Exemples :
+/ssh:user@host:/home/user/file
+/sudo::/etc/fstab
+/ssh:user@host|sudo::/home/user/file
+
 #+begin_src emacs-lisp
 
 (use-package tramp

@@ -492,6 +492,7 @@ C-c C-w : org-refile
   (setq org-refile-allow-creating-parent-nodes 'confirm)
   (setq org-refile-targets '(("next.org" :level . 0)
                              ("someday.org" :level . 0)
+                             ("tickler.org" :level . 0)
                              ("reading.org" :level . 1)
                              ("reference.org" :level . 1)
                              ("projects.org" :maxlevel . 1)))

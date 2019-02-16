@@ -181,6 +181,9 @@ Use emojify-insert-emoji to insert an emoji
   :init (global-emojify-mode))
 #+end_src
 
+** Dired
+Bindings :
+f - visit current file
 * Coding
 ** Project management
 Bindings :

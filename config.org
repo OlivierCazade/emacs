@@ -184,6 +184,7 @@ Use emojify-insert-emoji to insert an emoji
 ** Dired
 Bindings :
 f - visit current file
++ - create a new subdirecorty
 * Coding
 ** Project management
 Bindings :

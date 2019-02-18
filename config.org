@@ -188,6 +188,7 @@ f - visit current file
 d - flag file for deletion
 x - execute deletion requested
 m - mark a file for latter command
+u - unmark a file
 = - compare file at point with the one at mark
 
 * Coding

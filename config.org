@@ -191,6 +191,10 @@ m - mark a file for latter command
 u - unmark a file
 = - compare file at point with the one at mark
 
+#+begin_src emacs-lisp
+(setq dired-listing-switches "-alh")
+#+end_src
+
 * Coding
 ** Project management
 Bindings :

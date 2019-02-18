@@ -187,6 +187,8 @@ f - visit current file
 + - create a new subdirecorty
 d - flag file for deletion
 x - execute deletion requested
+m - mark a file for latter command
+= - compare file at point with the one at mark
 
 * Coding
 ** Project management

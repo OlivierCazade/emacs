@@ -185,6 +185,9 @@ Use emojify-insert-emoji to insert an emoji
 Bindings :
 f - visit current file
 + - create a new subdirecorty
+d - flag file for deletion
+x - execute deletion requested
+
 * Coding
 ** Project management
 Bindings :

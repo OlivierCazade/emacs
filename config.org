@@ -185,6 +185,7 @@ Use emojify-insert-emoji to insert an emoji
 Bindings :
 f - visit current file
 + - create a new subdirecorty
+s - toggle name/date sorting
 d - flag file for deletion
 x - execute deletion requested
 R - rename or move file

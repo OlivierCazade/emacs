@@ -197,6 +197,11 @@ u - unmark a file
 (setq dired-listing-switches "-alh")
 #+end_src
 
+** Calc
+Bindings :
+C-x * q : quick-mode
+C-x * c : calc-mode
+
 * Coding
 ** Project management
 Bindings :

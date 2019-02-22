@@ -184,6 +184,7 @@ Use emojify-insert-emoji to insert an emoji
 ** Dired
 Bindings :
 f - visit current file
+a - visit current file in same buffer
 + - create a new subdirecorty
 s - toggle name/date sorting
 d - flag file for deletion

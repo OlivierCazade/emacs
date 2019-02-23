@@ -196,6 +196,7 @@ u - unmark a file
 
 #+begin_src emacs-lisp
 (setq dired-listing-switches "-alh")
+(put 'dired-find-alternate-file 'disabled nil)
 #+end_src
 
 ** Calc

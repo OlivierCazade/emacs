@@ -204,6 +204,13 @@ Bindings :
 C-x * q : quick-mode
 C-x * c : calc-mode
 
+** Multiplie cursors
+#+begin_src emacs-lisp
+(use-package multiple-cursors
+  :defer t)
+#+end_src
+
+
 * Coding
 ** Project management
 Bindings :

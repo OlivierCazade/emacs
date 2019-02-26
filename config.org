@@ -206,8 +206,11 @@ C-x * c : calc-mode
 
 ** Multiplie cursors
 #+begin_src emacs-lisp
-(use-package multiple-cursors
-  :defer t)
+  (use-package multiple-cursors
+    :defer t)
+  ;; (define-key mc/keymap (kbd "<return>") nil)
+  (global-set-key (kbd "C-c m l") 'mc/edit-lines)
+  (global-set-key (kbd "C-c m m") 'mc/mark-all-dwim)
 #+end_src
 
 

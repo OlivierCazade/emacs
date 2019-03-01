@@ -7,8 +7,11 @@
 	org-end-of-line
 	org-return-indent
 	org-self-insert-command
+	yaml-electric-backspace
+	yaml-electric-dash-and-dot
 	))
 
 (setq mc/cmds-to-run-once
       '(
+	keyboard-escape-quit
 	))

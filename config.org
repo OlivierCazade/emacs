@@ -208,6 +208,7 @@ C-x * c : calc-mode
 Bindings
 
 C-g : Leave multiple cursors mode
+C-c m l : Edit multi line, one cursor is added at the beginning of each line of the region
 
 #+begin_src emacs-lisp
   (use-package multiple-cursors

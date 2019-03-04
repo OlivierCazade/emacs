@@ -209,6 +209,7 @@ Bindings
 
 C-g : Leave multiple cursors mode
 C-c m l : Edit multi line, one cursor is added at the beginning of each line of the region
+C-c m m : Mark-all-dwim
 
 #+begin_src emacs-lisp
   (use-package multiple-cursors

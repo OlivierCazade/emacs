@@ -224,6 +224,7 @@ C-c m m : Mark-all-dwim
 Bindings :
 C-p p p : projectile-switch-project
 C-x f or C-p p f : projectile-find-file
+C-p s g : grep in project
 
 #+begin_src emacs-lisp
 ;; projectile

@@ -14,11 +14,8 @@ No need to set ensure to true for each package.
 ** Theme
 
 #+begin_src emacs-lisp
-  (use-package ample-theme
-    :init (progn (load-theme 'ample t t)
-		 (enable-theme 'ample))
-    :defer t)
-   (set-face-attribute 'default nil :family "FuraCode Nerd Font Mono"  :height 140)
+  (use-package nimbus-theme)
+  (set-face-attribute 'default nil :family "FuraCode Nerd Font Mono"  :height 140)
 #+end_src
 
 ** Preferences

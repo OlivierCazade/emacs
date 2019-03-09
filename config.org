@@ -8,6 +8,7 @@ No need to set ensure to true for each package.
 (setq use-package-always-ensure t)
 #+END_SRC
 ** Delight
+Delight is used to hide some minor-mode from ModeLine
 #+BEGIN_SRC emacs-lisp
 (use-package delight)
 #+END_SRC

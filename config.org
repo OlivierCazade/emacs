@@ -34,7 +34,7 @@ Delight is used to hide some minor-mode from ModeLine
   (show-paren-mode)
 #+end_src
 
-
+*** Scratch message
 Saw this and found it funny :
 https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessage/
 #+begin_src emacs-lisp

@@ -42,6 +42,7 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
       ";; - 'Tis but a scratch!\n;; - A scratch? Your arm's off!\n;; - No, it isn't!\n\n")
 #+end_src
 
+*** Get env var
 #+begin_src emacs-lisp
 (use-package exec-path-from-shell
   :defer t

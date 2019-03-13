@@ -394,6 +394,18 @@ Code navigation
   )
 #+end_src
 
+Formatting
+
+#+begin_src emacs-lisp
+(use-package prettier-js
+    :init
+        (add-hook 'js2-mode-hook 'prettier-js-mode)
+        (add-hook 'rjsx-mode-hook 'prettier-js-mode)
+        (add-hook 'web-mode-hook 'prettier-js-mode)
+)
+#+end_src
+
+
 ** Latex
 Bindings :
 C-c C-t C-p : toggle pdf mode

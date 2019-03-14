@@ -466,6 +466,14 @@ Repeater can be added to the timestamp ex: <YYYY-MM-DD +1w> everyweek
 ++ and .+ are special repeater to use when the next occurence depends on when the previous occurence is switched to DONE
 #+end_src
 
+Tables with org-mode
+C-c | : Create new table
+Tab : Next cell
+S-Tab | Previous cell
+M-S down : new row
+M-S right : new column
+M-S up : delete row
+
 #+begin_src emacs-lisp
   (use-package org
     :mode (("\\.org$" . org-mode))

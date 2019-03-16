@@ -268,7 +268,7 @@ Use projectile to group buffer per project in the iBuffer view.
   )
 #+end_src
 
-# Highlight uncommitted changes
+Highlight uncommitted changes
 
 #+BEGIN_SRC emacs-lisp
   (use-package git-gutter

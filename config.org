@@ -354,6 +354,8 @@ C-c C-c l : live preview mode
 #+end_src
 
 ** Shell
+Shellcheck is a shell script analysis tool.
+
 #+begin_src emacs-lisp
 (use-package flymake-shellcheck
   :defer t

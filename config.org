@@ -291,10 +291,6 @@ Use M-x elpy-config to check required binaries
      :delight elpy-mode
      :init
      (elpy-enable))
-
-   ;; TODO binding collision C-c C-s with org-mode schedule
-   ;; (use-package pyenv-mode
-   ;;   :init (add-hook 'python-mode-hook 'pyenv-mode))
 #+end_src
 
 ** C

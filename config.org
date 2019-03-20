@@ -283,6 +283,8 @@ Highlight uncommitted changes
 Usefull bindings:
  M-. Go to definition
  M-* Go back to the last place M-. was used
+ C-c C-n : elpy-flymake-next-error
+ C-c C-p : elpy-flymake-previous-error
 
 Use M-x elpy-config to check required binaries
 #+begin_src emacs-lisp

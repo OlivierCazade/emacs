@@ -204,6 +204,16 @@ Bindings :
 C-x * q : quick-mode
 C-x * c : calc-mode
 
+** Buffer navigation
+
+#+begin_src emacs-lisp
+  (use-package avy
+  :ensure t
+     :bind (("C-:" . avy-goto-char)
+     )
+  )
+#+end_src
+
 ** Multiplie cursors
 Bindings
 

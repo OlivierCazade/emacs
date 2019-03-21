@@ -3,10 +3,12 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	kill-region
 	org-beginning-of-line
 	org-end-of-line
 	org-return-indent
 	org-self-insert-command
+	org-yank
 	yaml-electric-backspace
 	yaml-electric-dash-and-dot
 	))

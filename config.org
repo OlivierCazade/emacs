@@ -229,6 +229,24 @@ C-c m m : Mark-all-dwim
   (global-set-key (kbd "C-c m m") 'mc/mark-all-dwim)
 #+end_src
 
+** Snippets
+#+begin_src emacs-lisp
+  (use-package yasnippet                  ; Snippets
+    :config
+    ;; (validate-setq
+    ;;  yas-verbosity 1                      ; No need to be so verbose
+    ;;  yas-wrap-around-region t)
+
+    ;; (with-eval-after-load 'yasnippet
+    ;;   (validate-setq yas-snippet-dirs '(yasnippet-snippets-dir)))
+
+    (yas-reload-all)
+    (yas-global-mode)
+  )
+
+  (use-package yasnippet-snippets         ; Collection of snippets
+    :ensure t)
+#+end_src
 * Coding
 ** Project management
 Bindings :

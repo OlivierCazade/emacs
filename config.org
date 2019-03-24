@@ -230,6 +230,8 @@ C-c m m : Mark-all-dwim
 #+end_src
 
 ** Snippets
+A templating system
+
 #+begin_src emacs-lisp
   (use-package yasnippet                  ; Snippets
     :config

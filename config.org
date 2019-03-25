@@ -453,9 +453,6 @@ C-c C-a : run all
     (defun colorize-compilation-buffer ()
       (when (eq major-mode 'compilation-mode)
       (ansi-color-apply-on-region compilation-filter-start (point-max))))
-      ;; (toggle-read-only)
-      ;; (ansi-color-apply-on-region compilation-filter-start (point))
-      ;; (toggle-read-only))
     (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
 #+end_src
 * Org

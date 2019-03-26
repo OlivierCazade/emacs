@@ -263,7 +263,6 @@ C-p s g : grep in project
 
 Use projectile to group buffer per project in the iBuffer view.
 #+begin_src emacs-lisp
-;; projectile
 (use-package ibuffer-projectile
   :bind ("C-x C-b" . ibuffer)
   :defer t

@@ -631,6 +631,8 @@ Highlight source-blocks
 ** flyspell
 Spell checking in emacs.
 
+Bindings:
+C-M-i : auto correct word
 #+begin_src emacs-lisp
 (use-package flyspell
   :defer t

@@ -629,7 +629,7 @@ Highlight source-blocks
 
 * Misc
 ** flyspell
-Spell checking in emacs.
+Spell checking in Emacs.
 
 Bindings:
 C-M-i : auto correct word

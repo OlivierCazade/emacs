@@ -627,6 +627,13 @@ Highlight source-blocks
   ))
 #+end_src
 
+** Org-agenda
+v for view
+#+BEGIN_SRC emacs-lisp
+      (setq org-agenda-span 'day)
+
+#+END_SRC
+
 * Misc
 ** flyspell
 Spell checking in Emacs.

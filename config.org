@@ -631,7 +631,21 @@ Highlight source-blocks
 v for view
 #+BEGIN_SRC emacs-lisp
       (setq org-agenda-span 'day)
+#+END_SRC
 
+#+BEGIN_SRC emacs-lisp
+      (use-package org-super-agenda
+      :config
+      (org-super-agenda-mode t))
+
+  (setq org-super-agenda-groups
+	   '(
+	       (:name "Office"
+		      ;; Single arguments given alone
+		      :tag "@office"
+		      :priority "1")
+	    )
+  )
 #+END_SRC
 
 * Misc

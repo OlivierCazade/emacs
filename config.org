@@ -642,8 +642,10 @@ v for view
 	   '(
 	       (:name "Office"
 		      ;; Single arguments given alone
-		      :tag "@office"
-		      :priority "1")
+		      :tag "@office")
+	       (:name "Home"
+		      ;; Single arguments given alone
+		      :tag "@home")
 	    )
   )
 #+END_SRC

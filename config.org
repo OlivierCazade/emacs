@@ -641,13 +641,17 @@ v for view
   (setq org-super-agenda-groups
 	   '(
 	       (:name "Office"
-		      ;; Single arguments given alone
 		      :tag "@office")
 	       (:name "Home"
-		      ;; Single arguments given alone
 		      :tag "@home")
 	    )
   )
+
+(setq org-agenda-custom-commands
+      '(("A" "Office block agenda"
+         ((agenda "" ((org-agenda-span 1)))
+          (todo "NEXT"))
+        )))
 #+END_SRC
 
 * Misc

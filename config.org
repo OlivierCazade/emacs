@@ -291,6 +291,13 @@ Highlight uncommitted changes
     :delight git-gutter-mode)
 #+END_SRC
 
+Display todos in magit
+
+#+BEGIN_SRC emacs-lisp
+  (use-package magit-todos
+   :config (magit-todos-mode t))
+#+END_SRC
+
 ** Python
 Usefull bindings:
  M-. Go to definition

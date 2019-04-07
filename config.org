@@ -649,11 +649,25 @@ v for view
 	    )
   )
 
-(setq org-agenda-custom-commands
-      '(("A" "Office block agenda"
-         ((agenda "" ((org-agenda-span 1)))
-          (todo "NEXT"))
-        )))
+  (setq org-agenda-custom-commands
+	'(("A" "Office block agenda"
+	   ((agenda "" ((org-agenda-span 1)
+			(org-super-agenda-groups
+			  '((:name "Appointment"
+			     :time-grid t)
+			    (:name "Today"
+			     :scheduled t
+			     :deadline t)))
+			     ))
+	    (todo "NEXT"
+		       ((org-super-agenda-groups
+			  '((:name "Office"
+			     :tag "@office")
+			    (:name "Home"
+			     :tag "@home")))
+			     )
+	    ))
+	  )))
 #+END_SRC
 
 * Misc

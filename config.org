@@ -637,11 +637,11 @@ v for view
 
   (setq org-super-agenda-groups
 	   '(
+	       (:name "Appointment"
+	        :time-grid t)
                (:name "Today"
 	        :scheduled t
-		:deadline t
-                :time-grid t
-                :todo "TODAY")
+		:deadline t)
 	       (:name "Office"
 		      :tag "@office")
 	       (:name "Home"

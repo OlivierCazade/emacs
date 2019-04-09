@@ -199,6 +199,11 @@ u - unmark a file
 (put 'dired-find-alternate-file 'disabled nil)
 #+end_src
 
+#+BEGIN_SRC emacs-lisp
+(use-package diredfl
+  :init (diredfl-global-mode 1))
+#+END_SRC
+
 ** Calc
 Bindings :
 C-x * q : quick-mode

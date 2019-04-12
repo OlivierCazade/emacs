@@ -394,6 +394,13 @@ C-c C-c l : live preview mode
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 #+end_src
 
+#+BEGIN_SRC emacs-lisp
+(use-package company-terraform
+  :defer t
+  :init
+  (company-terraform-init))
+#+END_SRC
+
 ** Shell
 Shellcheck is a shell script analysis tool.
 

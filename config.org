@@ -756,6 +756,12 @@ https://github.com/pashky/restclient.el
     :defer t)
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp
+(use-package company-restclient
+  :after (restclient company)
+  :config (add-to-list 'company-backends 'company-restclient))
+#+END_SRC
+
 ** Google this
 Bindings to launch google searches. All functions are bound under C-c /
 #+BEGIN_SRC emacs-lisp

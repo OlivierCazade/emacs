@@ -142,6 +142,12 @@ counsel-find-jump : from current directory, list recursively every file
   )
 #+end_src
 
+#+BEGIN_SRC emacs-lisp
+(use-package counsel-projectile
+:defer t
+:init (counsel-projectile-mode))
+#+END_SRC
+
 *** smex
 Smex is an M-x alternative it display the recently and most frequently used commands.
 #+begin_src emacs-lisp

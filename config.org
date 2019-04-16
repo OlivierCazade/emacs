@@ -123,8 +123,8 @@ C-M-j : ivy-immediate-done (use exactly what has been written)
         '((t   . ivy--regex-ignore-order)))
   ;; use ivy as projectile completion
   (setq projectile-completion-system 'ivy)
-  ;; Do note show . and .. in files selction
-  (setq ivy-extra-directories nil)
+  ;; Do note show .. in files selction
+  (setq ivy-extra-directories '("./"))
   )
 #+end_src
 

@@ -479,6 +479,9 @@ C-c C-a : run all
 #+end_src
 
 ** Compilation
+
+Use C-u M-x compile to run compilation buffer with shell interaction.
+
 #+begin_src emacs-lisp
   (use-package ansi-color
     :defer t

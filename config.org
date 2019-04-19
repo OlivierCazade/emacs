@@ -495,7 +495,6 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
 ** General
 Global bindings :
 C-c a org-agenda
-C-c A org-custom-agenda (include NEXT tasks)
 
 In org-mode :
 C-c C-c on an Headline to add tag
@@ -505,15 +504,6 @@ C-c C-d to add a deadline
 C-c .   add a timestamp
 C-c !   add an inactive timestamp that will not cause an agenda entry
 C-u C-u TAB switching back to startup visibility
-
-In org-agenda :
-f Next time span
-b Previous time span
-. Go to today
-k capture
-l Toggle logbook mode (ex: Display Done tasks)
-} or ] Display inactive timestamp
-S-right/left Folowwing/preceding TODO state
 
 About dates :
 #+begin_src
@@ -666,7 +656,19 @@ Highlight source-blocks
 #+end_src
 
 ** Org-agenda
-v for view
+Global bindings :
+C-c a A org-custom-agenda (include NEXT tasks)
+
+In org-agenda :
+f Next time span
+b Previous time span
+. Go to today
+k capture
+l Toggle logbook mode (ex: Display Done tasks)
+} or ] Display inactive timestamp
+S-right/left Folowwing/preceding TODO state
+v change time range
+
 #+BEGIN_SRC emacs-lisp
       (setq org-agenda-span 'day)
 #+END_SRC

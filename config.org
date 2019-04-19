@@ -232,6 +232,12 @@ C-c m m : Mark-all-dwim
   (global-set-key (kbd "C-c m m") 'mc/mark-all-dwim)
 #+end_src
 
+** Frame navigation :
+C-x 5 2 : Make frame
+s-Left : Previous frame
+s-Right : Next frame
+
+super key is disabled
 ** Snippets
 A templating system
 

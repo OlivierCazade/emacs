@@ -15,7 +15,8 @@ Delight is used to hide some minor-mode from ModeLine
 ** Theme
 
 #+begin_src emacs-lisp
-  (use-package nimbus-theme)
+  (use-package zenburn-theme)
+  (load-theme 'zenburn t)
   (set-face-attribute 'default nil :family "FuraCode Nerd Font Mono"  :height 140)
 #+end_src
 

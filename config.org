@@ -730,6 +730,9 @@ v change time range
             (display-line-numbers-mode 0)))
 #+END_SRC
 
+** Narrowing
+Keybindings :
+C-x n e : Narrow to element
 * Misc
 ** flyspell
 Spell checking in Emacs.

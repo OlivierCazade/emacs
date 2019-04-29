@@ -733,6 +733,7 @@ v change time range
 ** Narrowing
 Keybindings :
 C-x n e : Narrow to element
+C-x n w : Leave narrow mode
 * Misc
 ** flyspell
 Spell checking in Emacs.

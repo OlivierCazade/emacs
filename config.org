@@ -730,6 +730,10 @@ v change time range
             (display-line-numbers-mode 0)))
 #+END_SRC
 
+** Clock
+I like the idea of punching in and punching out like described here :
+http://doc.norang.ca/org-mode.html#GettingOrgModeWithGit
+
 ** Narrowing
 Keybindings :
 C-x n e : Narrow to element

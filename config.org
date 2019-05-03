@@ -507,13 +507,13 @@ Global bindings :
 C-c a org-agenda
 
 In org-mode :
-C-c C-c on an Headline to add tag
-C-c C-t to toggle TODO
-C-c C-s to add a scheduled date
-C-c C-d to add a deadline
-C-c .   add a timestamp
-C-c !   add an inactive timestamp that will not cause an agenda entry
-C-u C-u TAB switching back to startup visibility
+C-c C-c or C-c C-q	: on an Headline to add tag
+C-c C-t			: to toggle TODO
+C-c C-s			: to add a scheduled date
+C-c C-d			: to add a deadline
+C-c .			: add a timestamp
+C-c !			: add an inactive timestamp that will not cause an agenda entry
+C-u C-u TAB		: switching back to startup visibility
 
 About dates :
 #+begin_src

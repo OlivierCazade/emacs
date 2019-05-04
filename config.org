@@ -696,9 +696,9 @@ v change time range
 	        :scheduled t
 		:deadline t)
 	       (:name "Office"
-		      :tag "@office")
+		      :tag "onrewind")
 	       (:name "Home"
-		      :tag "@home")
+		      :tag "pers")
 	    )
   )
 
@@ -715,9 +715,9 @@ v change time range
 	    (todo "NEXT"
 		       ((org-super-agenda-groups
 			  '((:name "Office"
-			     :tag "@office")
+			     :tag "onrewind")
 			    (:name "Home"
-			     :tag "@home")))
+			     :tag "pers")))
 			     )
 	    ))
 	  )))

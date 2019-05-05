@@ -734,6 +734,11 @@ v change time range
 I like the idea of punching in and punching out like described here :
 http://doc.norang.ca/org-mode.html#GettingOrgModeWithGit
 
+If idle for more than 15 minutes, resolve the things by asking what to do with the clock time
+#+BEGIN_SRC emacs-lisp
+(setq org-clock-idle-time 15)
+#+END_SRC
+
 ** Narrowing
 Keybindings :
 C-x n e : Narrow to element

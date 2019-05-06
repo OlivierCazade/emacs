@@ -739,6 +739,12 @@ If idle for more than 15 minutes, resolve the things by asking what to do with t
 (setq org-clock-idle-time 15)
 #+END_SRC
 
+Clock out when done
+#+BEGIN_SRC emacs-lisp
+(setq org-clock-out-when-done t)
+#+END_SRC
+
+
 ** Narrowing
 Keybindings :
 C-x n e : Narrow to element

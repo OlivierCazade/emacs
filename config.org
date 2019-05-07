@@ -752,10 +752,10 @@ Clock out when done
     ;;                             "* Onrewind arrival %U"  :empty-lines 1)))
   (defun oc/arrival (arg)
     (interactive "p")
-    (setq org-capture-templates
+    (let ((org-capture-templates
       '(("a" "Work arrival" entry (file+datetree "~/org/journal.org")
-				"* Onrewind arrival %U" :immediate-finish t)))
-      (org-capture nil "a"))
+				"* Onrewind arrival %U" :immediate-finish t))))
+      (org-capture nil "a")))
 
   (defun oc/departure ()
   )

@@ -662,6 +662,10 @@ Highlight source-blocks
         "* %?")
    ("l" "Log" entry (file+datetree "~/org/journal.org")
         "* %?\nADDED: %U")
+   ("a" "Work arrival" entry (file+datetree "~/org/journal.org")
+        "* Onrewind arrival %U" :immediate-finish t  :clock-in t :clock-keep t)
+   ("d" "Work departure" entry (file+datetree "~/org/journal.org")
+        "* Onrewind departure %U" :immediate-finish t)
   ))
 #+end_src
 
@@ -748,15 +752,24 @@ Clock out when done
 
   (setq oc/keep-clock-running nil)
 
-  (defun oc/arrival (arg)
-    (interactive "p")
-    (let ((org-capture-templates
-      '(("a" "Work arrival" entry (file+datetree "~/org/journal.org")
-				"* Onrewind arrival %U" :immediate-finish t))))
-      (org-capture nil "a")))
-
-  (defun oc/departure ()
+  (defun oc/arrival-hook ()
+    ;; (setq oc/keep-clock-running org-capture-last-stored)
+    ;; (org-with-point-at oc/keep-clock-running
+    ;;   (org-clock-in))
   )
+
+  (defun oc/departure-hook ()
+    (org-clock-out)
+  )
+
+
+  (defun oc/org-capture-hook ()
+    (when (string= "a" (plist-get org-capture-plist :key))
+      (oc/arrival-hook))
+    (when (string= "d" (plist-get org-capture-plist :key))
+      (oc/departure-hook)))
+
+  (add-hook 'org-capture-before-finalize-hook #'oc/org-capture-hook)
 #+END_SRC
 
 

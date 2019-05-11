@@ -663,7 +663,7 @@ Highlight source-blocks
    ("l" "Log" entry (file+datetree "~/org/journal.org")
         "* %?\nADDED: %U")
    ("a" "Work arrival" entry (file+datetree "~/org/journal.org")
-        "* Onrewind arrival %U" :immediate-finish t  :clock-in t :clock-keep t)
+        "* Onrewind arrival %U" :immediate-finish t)
    ("d" "Work departure" entry (file+datetree "~/org/journal.org")
         "* Onrewind departure %U" :immediate-finish t)
   ))
@@ -753,14 +753,14 @@ Clock out when done
   (setq oc/keep-clock-running nil)
 
   (defun oc/arrival-hook ()
-    ;; (setq oc/keep-clock-running org-capture-last-stored)
-    ;; (org-with-point-at oc/keep-clock-running
-    ;;   (org-clock-in))
-  )
+    (setq oc/workday-task-id (org-id-get-create))
+    (oc/clock-in-workday-task))
 
   (defun oc/departure-hook ()
-    (org-clock-out)
-  )
+    (when oc/workday-task-id
+      (setq oc/workday-task-id nil))
+    (when (org-clock-is-active)
+      (org-clock-out)))
 
 
   (defun oc/org-capture-hook ()
@@ -769,8 +769,12 @@ Clock out when done
     (when (string= "d" (plist-get org-capture-plist :key))
       (oc/departure-hook)))
 
-  (add-hook 'org-capture-before-finalize-hook #'oc/org-capture-hook)
-#+END_SRC
+  (add-hook 'org-capture-before-finalize-hook 'oc/org-capture-hook)
+
+  (defun oc/clock-in-workday-task()
+    (when oc/workday-task-id
+       (org-with-point-at (org-id-find oc/workday-task-id 'marker)
+         (org-clock-in '(16)))))
 
 
 ** Narrowing

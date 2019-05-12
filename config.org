@@ -750,7 +750,7 @@ Clock out when done
 
 #+BEGIN_SRC emacs-lisp
 
-  (setq oc/keep-clock-running nil)
+  (setq oc/workday-task-id nil)
 
   (defun oc/arrival-hook ()
     (setq oc/workday-task-id (org-id-get-create))

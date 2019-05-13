@@ -777,6 +777,15 @@ Clock out when done
          (org-clock-in '(16)))))
 
 
+  (defun oc/clock-out-hook ()
+    (when (and oc/workday-task-id
+               (not org-clock-clocking-in)
+               (not org-clock-resolving-clocks-due-to-idleness))
+      (oc/clock-in-workday-task)))
+
+  (add-hook 'org-clock-out-hook 'oc/clock-out-hook 'append)
+#+END_SRC
+
 ** Narrowing
 Keybindings :
 C-x n e : Narrow to element

@@ -662,9 +662,9 @@ Highlight source-blocks
         "* %?")
    ("l" "Log" entry (file+datetree "~/org/journal.org")
         "* %?\nADDED: %U")
-   ("a" "Work arrival" entry (file+datetree "~/org/journal.org")
+   ("I" "Work arrival" entry (file+datetree "~/org/journal.org")
         "* Onrewind arrival %U" :immediate-finish t)
-   ("d" "Work departure" entry (file+datetree "~/org/journal.org")
+   ("O" "Work departure" entry (file+datetree "~/org/journal.org")
         "* Onrewind departure %U" :immediate-finish t)
   ))
 #+end_src
@@ -764,9 +764,9 @@ Clock out when done
 
 
   (defun oc/org-capture-hook ()
-    (when (string= "a" (plist-get org-capture-plist :key))
+    (when (string= "I" (plist-get org-capture-plist :key))
       (oc/arrival-hook))
-    (when (string= "d" (plist-get org-capture-plist :key))
+    (when (string= "O" (plist-get org-capture-plist :key))
       (oc/departure-hook)))
 
   (add-hook 'org-capture-before-finalize-hook 'oc/org-capture-hook)

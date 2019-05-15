@@ -748,6 +748,11 @@ Clock out when done
 (setq org-clock-out-when-done t)
 #+END_SRC
 
+Include current clocking task in clock reports
+#+BEGIN_SRC emacs-lisp :tangle yes
+(setq org-clock-report-include-clocking-task t)
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp
 
   (setq oc/workday-task-id nil)

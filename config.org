@@ -757,6 +757,11 @@ Include current clocking task in clock reports
 (setq org-clock-report-include-clocking-task t)
 #+END_SRC
 
+Clean 0 min clocked lines
+#+BEGIN_SRC emacs-lisp
+(setq org-clock-out-remove-zero-time-clocks t)
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp
 
   (setq oc/workday-task-id nil)

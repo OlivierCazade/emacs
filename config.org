@@ -752,6 +752,11 @@ Clock out when done
 (setq org-clock-out-when-done t)
 #+END_SRC
 
+Save the running clock and all clock history when exiting Emacs, load it on startup
+#+BEGIN_SRC emacs-lisp
+(setq org-clock-persist t)
+#+END_SRC
+
 Include current clocking task in clock reports
 #+BEGIN_SRC emacs-lisp :tangle yes
 (setq org-clock-report-include-clocking-task t)

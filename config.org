@@ -808,7 +808,7 @@ Clean 0 min clocked lines
 ** Narrowing
 Keybindings :
 C-x n e : Narrow to element
-C-x n e : Narrow to subtree
+C-x n s : Narrow to subtree
 C-x n w : Leave narrow mode
 * Misc
 ** flyspell

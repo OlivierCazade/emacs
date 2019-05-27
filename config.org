@@ -254,9 +254,6 @@ A templating system
     (yas-reload-all)
     (yas-global-mode)
   )
-
-  (use-package yasnippet-snippets         ; Collection of snippets
-    :ensure t)
 #+end_src
 * Coding
 ** Project management

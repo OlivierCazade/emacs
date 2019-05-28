@@ -666,6 +666,8 @@ Highlight source-blocks
         "* Onrewind arrival %U" :immediate-finish t)
    ("O" "Work departure" entry (file+datetree "~/org/journal.org")
         "* Onrewind departure %U" :immediate-finish t)
+   ("c" "Add to current clocked task" plain (clock)
+        "%?")
   ))
 #+end_src
 

@@ -13,7 +13,6 @@ Delight is used to hide some minor-mode from ModeLine
 (use-package delight)
 #+END_SRC
 ** Theme
-
 #+begin_src emacs-lisp
   (use-package zenburn-theme)
   (load-theme 'zenburn t)
@@ -353,6 +352,14 @@ Use M-x elpy-config to check required binaries
      :init
      (elpy-enable))
 #+end_src
+
+Syntax highlighting for requirements.txt files
+#+BEGIN_SRC emacs-lisp
+(use-package pip-requirements
+  :mode (("\\.pip\\'" . pip-requirements-mode)
+         ("requirements.*\\.txt\\'" . pip-requirements-mode)
+         ("requirements\\.in" . pip-requirements-mode)))
+#+END_SRC
 
 ** C
 #+begin_src emacs-lisp

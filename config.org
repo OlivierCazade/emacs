@@ -729,7 +729,7 @@ v change time range
 		       ((org-super-agenda-groups
 			  '((:name "Office"
 			     :tag "onrewind")
-			    (:name "Home"
+			    (:name "Personal"
 			     :tag "pers")))
 			     )
 	    ))

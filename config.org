@@ -508,6 +508,13 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
       (ansi-color-apply-on-region compilation-filter-start (point-max))))
     (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
 #+end_src
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'compilation-mode-hook
+          (lambda ()
+            (display-line-numbers-mode 0)))
+#+END_SRC
+
 * Org
 ** General
 Global bindings :

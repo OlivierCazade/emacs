@@ -515,6 +515,13 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
             (display-line-numbers-mode 0)))
 #+END_SRC
 
+** Kubernetes
+#+BEGIN_SRC emacs-lisp
+(use-package kubernetes
+  :ensure t
+  :commands (kubernetes-overview))
+#+END_SRC
+
 * Org
 ** General
 Global bindings :

@@ -671,6 +671,9 @@ Highlight source-blocks
 
 #+begin_src emacs-lisp
 (setq org-src-fontify-natively t)
+(org-babel-do-load-languages 'org-babel-load-languages
+  (append org-babel-load-languages
+    '((shell . t))))
 #+end_src
 
 ** Org-capture

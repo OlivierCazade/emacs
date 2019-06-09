@@ -676,6 +676,13 @@ Highlight source-blocks
     '((shell . t))))
 #+end_src
 
+Org-babel async execution
+
+#+begin_src emacs-lisp
+  (use-package ob-async
+    :defer t
+    :init (require 'ob-async))
+#+end_src
 ** Org-capture
 
 #+begin_src emacs-lisp

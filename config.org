@@ -683,6 +683,19 @@ Org-babel async execution
     :defer t
     :init (require 'ob-async))
 #+end_src
+
+*** Mermaidjs
+
+#+BEGIN_SRC emacs-lisp
+(use-package ob-mermaid
+  :defer t
+  :init (org-babel-do-load-languages
+         'org-babel-load-languages
+	 (append org-babel-load-languages
+	   '((mermaid . t)))))
+(setq ob-mermaid-cli-path "/Users/ocazade/.nvm/versions/node/v10.16.0/bin/mmdc")
+#+END_SRC
+
 ** Org-capture
 
 #+begin_src emacs-lisp

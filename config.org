@@ -686,6 +686,8 @@ Org-babel async execution
 
 *** Mermaidjs
 
+C-c C-x C-v : toggle inline images
+
 #+BEGIN_SRC emacs-lisp
 (use-package ob-mermaid
   :defer t

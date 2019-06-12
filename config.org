@@ -698,6 +698,16 @@ C-c C-x C-v : toggle inline images
 (setq ob-mermaid-cli-path "/Users/ocazade/.nvm/versions/node/v10.16.0/bin/mmdc")
 #+END_SRC
 
+From :
+https://emacs.stackexchange.com/questions/3302/live-refresh-of-inline-images-with-org-display-inline-images/9813#9813
+#+BEGIN_SRC emacs-lisp
+(defun shk-fix-inline-images ()
+  (when org-inline-image-overlays
+    (org-redisplay-inline-images)))
+
+(add-hook 'org-babel-after-execute-hook 'shk-fix-inline-images)
+#+END_SRC
+
 ** Org-capture
 
 #+begin_src emacs-lisp

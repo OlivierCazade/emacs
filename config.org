@@ -865,6 +865,7 @@ Keybindings :
 C-x n e : Narrow to element
 C-x n s : Narrow to subtree
 C-x n w : Leave narrow mode
+C-c ' : Narrow into babel source
 * Misc
 ** flyspell
 Spell checking in Emacs.

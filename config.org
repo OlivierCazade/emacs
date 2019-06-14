@@ -920,6 +920,15 @@ https://github.com/pashky/restclient.el
   :config (add-to-list 'company-backends 'company-restclient))
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp
+(use-package ob-restclient
+  :defer t
+  :init (org-babel-do-load-languages
+          'org-babel-load-languages
+            (append org-babel-load-languages
+	      '((restclient . t)))))
+#+END_SRC
+
 ** Google this
 Bindings to launch google searches. All functions are bound under C-c /
 #+BEGIN_SRC emacs-lisp

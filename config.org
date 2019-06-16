@@ -390,10 +390,7 @@ C-c C-c l : live preview mode
 #+begin_src emacs-lisp
 
 (use-package ansible
-  :defer t
-  :init
-  (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
-  )
+  :defer t)
 
 #+end_src
 

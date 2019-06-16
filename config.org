@@ -74,6 +74,7 @@ Trailing whitespace display and management
 (setq-default show-trailing-whitespace t)
 (add-hook 'diff-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'compilation-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+end_src
 

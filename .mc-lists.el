@@ -3,6 +3,8 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	elpy-nav-backward-indent
+	elpy-nav-forward-indent
 	kill-region
 	org-beginning-of-line
 	org-end-of-line

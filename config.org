@@ -190,8 +190,7 @@ Use emojify-insert-emoji to insert an emoji
 
 #+begin_src emacs-lisp
 (use-package emojify
-  :defer t
-  :init (global-emojify-mode))
+  :defer t)
 #+end_src
 
 ** Dired

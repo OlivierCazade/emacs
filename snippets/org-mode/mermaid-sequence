@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: mermaid-sequence
+# key: mermaid-sequence
+# --
+#+BEGIN_SRC mermaid: file sequence.png
+sequenceDiagram
+A->>B: cdc
+B-->>C: bar
+B->C: bar2
+C->>A: c
+$0
+#+END_SRC

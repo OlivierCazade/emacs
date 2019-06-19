@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: shell
+# key: shell
+# --
+#+BEGIN_SRC shell
+echo $0
+#+END_SRC

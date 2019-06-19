@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: rest
+# key: rest
+# --
+#+BEGIN_SRC restclient
+GET https://api.ipify.org/?format=json
+#+END_SRC

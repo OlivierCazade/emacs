@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: mermaid-graph
+# key: mermaid-graph
+# --
+#+BEGIN_SRC mermaid: file graph.png
+graph LR
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+$0
+#+END_SRC

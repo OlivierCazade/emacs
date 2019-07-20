@@ -902,7 +902,6 @@ Exemples :
 
 #+end_src
 
-* Work in progress
 ** REST client
 https://github.com/pashky/restclient.el
 #+BEGIN_SRC emacs-lisp
@@ -926,6 +925,8 @@ https://github.com/pashky/restclient.el
 	      '((restclient . t)))))
 #+END_SRC
 
+
+* Work in progress
 ** Google this
 Bindings to launch google searches. All functions are bound under C-c /
 #+BEGIN_SRC emacs-lisp

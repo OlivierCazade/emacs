@@ -863,6 +863,24 @@ C-x n e : Narrow to element
 C-x n s : Narrow to subtree
 C-x n w : Leave narrow mode
 C-c ' : Narrow into babel source
+* Mail
+
+#+BEGIN_SRC emacs-lisp
+  (setq gnus-select-method '(nnnil ""))
+
+  ;; (setq user-mail-address "olivier.cazade@gmail.com"
+  ;;     user-full-name "Olivier Cazade")
+
+
+  (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+  ;; (setq gnutls-algorithm-priority nil)
+  (setq gnus-secondary-select-methods
+	'((nnimap "gmail"
+		  (nnimap-address "imap.gmail.com")
+		  (nnimap-server-port 993)
+		  (nnimap-stream ssl))))
+#+END_SRC
+
 * Misc
 ** flyspell
 Spell checking in Emacs.

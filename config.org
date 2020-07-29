@@ -7,6 +7,15 @@ No need to set ensure to true for each package.
 #+BEGIN_SRC emacs-lisp
 (setq use-package-always-ensure t)
 #+END_SRC
+
+** Benchmarking
+#+BEGIN_SRC emacs-lisp
+  (use-package benchmark-init
+    :config
+    ;; To disable collection of benchmark data after init is done.
+    (add-hook 'after-init-hook 'benchmark-init/deactivate))
+#+END_SRC
+
 ** Delight
 Delight is used to hide some minor-mode from ModeLine
 #+BEGIN_SRC emacs-lisp
@@ -16,7 +25,7 @@ Delight is used to hide some minor-mode from ModeLine
 #+begin_src emacs-lisp
   (use-package zenburn-theme)
   (load-theme 'zenburn t)
-  (set-face-attribute 'default nil :family "FuraCode Nerd Font Mono"  :height 120)
+  (set-face-attribute 'default nil :family "FiraCode Nerd Font Mono"  :height 120)
 #+end_src
 
 ** Preferences
@@ -229,6 +238,7 @@ Bindings
 C-g : Leave multiple cursors mode
 C-c m l : Edit multi line, one cursor is added at the beginning of each line of the region
 C-c m m : Mark-all-dwim
+C-j : In mc mode add a new line
 
 #+begin_src emacs-lisp
   (use-package multiple-cursors
@@ -246,6 +256,10 @@ s-Right : Next frame
 super key is disabled
 ** Snippets
 A templating system
+
+Usefull functions :
+yas-insert-snippet : Insert a snippet from available snippets
+yas-expand : Expand snippet from key before point
 
 #+begin_src emacs-lisp
   (use-package yasnippet                  ; Snippets
@@ -327,14 +341,15 @@ Highlight uncommitted changes
     :init
     (global-git-gutter-mode t)
     (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
+    :hook (prog-mode . git-gutter-mode)
     :delight git-gutter-mode)
 #+END_SRC
 
-Display todos in magit
+Display todos in magit (disabled due to big project errors)
 
 #+BEGIN_SRC emacs-lisp
-  (use-package magit-todos
-   :config (magit-todos-mode t))
+  ;; (use-package magit-todos
+  ;;  :config (magit-todos-mode t))
 #+END_SRC
 
 ** Python
@@ -403,6 +418,11 @@ C-c C-c l : live preview mode
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
   )
 
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package docker-compose-mode
+  :ensure t)
 #+end_src
 
 ** terraform
@@ -519,6 +539,13 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
   :commands (kubernetes-overview))
 #+END_SRC
 
+** Groovy
+#+BEGIN_SRC emacs-lisp
+(use-package groovy-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
+)
+#+END_SRC
 * Org
 ** General
 Global bindings :
@@ -608,6 +635,45 @@ Add log state into a drawer
 (setq org-log-into-drawer t)
 (setq org-log-state-notes-insert-after-drawers nil)
 #+end_src
+
+** Bank holidays in emacs
+
+#+BEGIN_SRC emacs-lisp
+(setq org-agenda-include-diary t)
+#+END_SRC
+
+From https://www.emacswiki.org/emacs/french-holidays.el
+
+#+BEGIN_SRC emacs-lisp
+(defvar holiday-french-holidays nil
+  "French holidays")
+
+(setq holiday-french-holidays
+      `((holiday-fixed 1 1 "Jour de l'an")
+	(holiday-fixed 1 6 "Épiphanie")
+	(holiday-fixed 2 2 "Chandeleur")
+	(holiday-fixed 2 14 "Saint Valentin")
+	(holiday-fixed 5 1 "Fête du travail")
+	(holiday-fixed 5 8 "Commémoration de la capitulation de l'Allemagne en 1945")
+	(holiday-fixed 6 21 "Fête de la musique")
+	(holiday-fixed 7 14 "Fête nationale - Prise de la Bastille")
+	(holiday-fixed 8 15 "Assomption (Religieux)")
+	(holiday-fixed 11 11 "Armistice de 1918")
+	(holiday-fixed 11 1 "Toussaint")
+	(holiday-fixed 11 2 "Commémoration des fidèles défunts")
+	(holiday-fixed 12 25 "Noël")
+        ;; fetes a date variable
+	(holiday-easter-etc 0 "Pâques")
+        (holiday-easter-etc 1 "Lundi de Pâques")
+        (holiday-easter-etc 39 "Ascension")
+        (holiday-easter-etc 49 "Pentecôte")
+        (holiday-easter-etc -47 "Mardi gras")
+	(holiday-float 5 0 4 "Fête des mères")
+	;; dernier dimanche de mai ou premier dimanche de juin si c'est le
+	;; même jour que la pentecôte TODO
+	(holiday-float 6 0 3 "Fête des pères"))) ;; troisième dimanche de juin
+(setq calendar-holidays holiday-french-holidays)
+#+END_SRC
 
 ** Org-refile
 Because of ivy completion, we need to change refile complete behaviour.
@@ -776,7 +842,7 @@ v change time range
 			  '((:name "Office"
 			     :tag "sophia")
 			    (:name "Personal"
-			     :tag "pers")))
+			     :tag "perso")))
 			     )
 	    ))
 	  )))
@@ -879,6 +945,23 @@ C-c ' : Narrow into babel source
 		  (nnimap-address "imap.gmail.com")
 		  (nnimap-server-port 993)
 		  (nnimap-stream ssl))))
+
+  (setq gnus-thread-sort-functions
+    '(gnus-thread-sort-by-most-recent-date
+        (not gnus-thread-sort-by-number)))
+
+#+END_SRC
+
+
+
+#+BEGIN_SRC emacs-lisp
+(use-package w3m
+  :defer t
+)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(setq mm-text-html-renderer 'w3m)
 #+END_SRC
 
 * Misc
@@ -902,6 +985,12 @@ C-M-i : auto correct word
   (define-key flyspell-mouse-map [down-mouse-3] #'flyspell-correct-word)
   )
 #+end_src
+
+#+BEGIN_SRC emacs-lisp
+(use-package flyspell-correct-ivy
+  :ensure t)
+#+END_SRC
+
 ** Tramp
 Tramp is used to edit remote files
 

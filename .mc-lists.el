@@ -3,14 +3,19 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	counsel-find-file
+	electric-newline-and-maybe-indent
 	elpy-nav-backward-indent
 	elpy-nav-forward-indent
+	indent-for-tab-command
 	kill-region
 	org-beginning-of-line
 	org-end-of-line
 	org-return-indent
 	org-self-insert-command
+	org-shiftright
 	org-yank
+	tab-to-tab-stop
 	yaml-electric-backspace
 	yaml-electric-dash-and-dot
 	))
@@ -18,4 +23,5 @@
 (setq mc/cmds-to-run-once
       '(
 	keyboard-escape-quit
+	org-cycle
 	))

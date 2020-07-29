@@ -5,10 +5,11 @@
 
 (require 'package)
 (setq package-archives
-      (append package-archives
-	      '(("melpa-stable" . "http://stable.melpa.org/packages/"))
-	      '(("melpa" . "http://melpa.org/packages/"))
-	      '(("org" . "http://orgmode.org/elpa/"))))
+      '(("gnu" . "http://elpa.gnu.org/packages/")
+	("melpa-stable" . "http://stable.melpa.org/packages/")
+	("melpa" . "http://melpa.org/packages/")
+	("org" . "http://orgmode.org/elpa/")))
+
 (package-initialize)
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -24,7 +25,6 @@
   (package-install 'use-package))
 
 (require 'use-package)
-(setq use-package-always-ensure t)
 
 ;;; Load the config
 (org-babel-load-file (concat user-emacs-directory "config.org"))

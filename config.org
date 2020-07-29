@@ -190,7 +190,7 @@ C-= : expand-region
 Use emojify-insert-emoji to insert an emoji
 
 #+begin_src emacs-lisp
-(use-package emojify
+(use-package emojify)
 #+end_src
 
 ** Dired
@@ -232,7 +232,7 @@ C-c m m : Mark-all-dwim
 C-j : In mc mode add a new line
 
 #+begin_src emacs-lisp
-  (use-package multiple-cursors
+  (use-package multiple-cursors)
   ;; (define-key mc/keymap (kbd "<return>") nil)
   (global-set-key (kbd "C-c m l") 'mc/edit-lines)
   (global-set-key (kbd "C-c m m") 'mc/mark-all-dwim)
@@ -387,7 +387,7 @@ C-c C-c l : live preview mode
 ** ansible
 #+begin_src emacs-lisp
 
-(use-package ansible
+(use-package ansible)
 
 #+end_src
 
@@ -981,7 +981,7 @@ Exemples :
 https://github.com/pashky/restclient.el
 #+BEGIN_SRC emacs-lisp
   (use-package restclient
-    :mode "\\.http$"
+    :mode "\\.http$")
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp

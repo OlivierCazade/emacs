@@ -57,7 +57,6 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
 *** Get env var
 #+begin_src emacs-lisp
 (use-package exec-path-from-shell
-  :defer t
   :init
   (exec-path-from-shell-copy-env "GOPATH")
   (exec-path-from-shell-copy-env "SHELL")
@@ -104,7 +103,6 @@ Store every backup fils in ~/.emacs.d/backups.
 #+begin_src emacs-lisp
 
 (use-package smartparens
-  :defer t
   :delight smartparens-mode
   :init
   (progn
@@ -120,7 +118,6 @@ C-M-j : ivy-immediate-done (use exactly what has been written)
 #+begin_src emacs-lisp
 (use-package ivy
   :delight ivy-mode
-  :defer t
   :init
   (ivy-mode 1)
   ;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
@@ -150,7 +147,6 @@ counsel-find-jump : from current directory, list recursively every file
 
 #+begin_src emacs-lisp
 (use-package counsel
-  :defer t
   :bind
   (("M-x" . counsel-M-x)
    ("C-s" . swiper)
@@ -160,7 +156,6 @@ counsel-find-jump : from current directory, list recursively every file
 
 #+BEGIN_SRC emacs-lisp
 (use-package counsel-projectile
-:defer t
 :init (counsel-projectile-mode))
 #+END_SRC
 
@@ -168,7 +163,6 @@ counsel-find-jump : from current directory, list recursively every file
 Smex is an M-x alternative it display the recently and most frequently used commands.
 #+begin_src emacs-lisp
 (use-package smex
-  :defer t
   :init (smex-initialize))
 #+end_src
 
@@ -177,7 +171,6 @@ Display command bindings in M-x buffer
 #+begin_src emacs-lisp
 
 (use-package which-key
-  :defer t
   :delight which-key-mode
   :init (which-key-mode 1))
 
@@ -189,7 +182,6 @@ C-= : expand-region
 
 #+BEGIN_SRC emacs-lisp
   (use-package expand-region
-    :defer t
     :bind ("C-=" . er/expand-region))
 #+END_SRC
 
@@ -199,7 +191,6 @@ Use emojify-insert-emoji to insert an emoji
 
 #+begin_src emacs-lisp
 (use-package emojify
-  :defer t)
 #+end_src
 
 ** Dired
@@ -242,7 +233,6 @@ C-j : In mc mode add a new line
 
 #+begin_src emacs-lisp
   (use-package multiple-cursors
-    :defer t)
   ;; (define-key mc/keymap (kbd "<return>") nil)
   (global-set-key (kbd "C-c m l") 'mc/edit-lines)
   (global-set-key (kbd "C-c m m") 'mc/mark-all-dwim)
@@ -279,7 +269,6 @@ C-p s g : grep in project
 ;; projectile
 (use-package projectile
   :delight projectile-mode
-  :defer t
   :init
   (projectile-mode)
   (setq projectile-use-git-grep t)
@@ -308,7 +297,6 @@ Use projectile to group buffer per project in the iBuffer view.
 #+begin_src emacs-lisp
 (use-package ibuffer-projectile
   :bind ("C-x C-b" . ibuffer)
-  :defer t
   :init
  (add-hook 'ibuffer-hook
     (lambda ()
@@ -326,7 +314,6 @@ Use projectile to group buffer per project in the iBuffer view.
 ** Git
 #+begin_src emacs-lisp
 (use-package magit
-  :defer t
   :init
   (global-set-key (kbd "C-x g") 'magit-status)
   (setq magit-completing-read-function 'ivy-completing-read)
@@ -337,7 +324,6 @@ Highlight uncommitted changes
 
 #+BEGIN_SRC emacs-lisp
   (use-package git-gutter
-    :defer t
     :init
     (global-git-gutter-mode t)
     (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
@@ -362,7 +348,6 @@ Usefull bindings:
 Use M-x elpy-config to check required binaries
 #+begin_src emacs-lisp
   (use-package elpy
-     :defer t
      :delight elpy-mode
      :init
      (elpy-enable))
@@ -386,7 +371,6 @@ Syntax highlighting for requirements.txt files
 #+begin_src emacs-lisp
 
 (use-package yaml-mode
-  :defer t
   )
 
 #+end_src
@@ -396,7 +380,6 @@ C-c C-c l : live preview mode
 #+begin_src emacs-lisp
 
 (use-package markdown-mode
-  :defer t
   )
 
 #+end_src
@@ -405,7 +388,6 @@ C-c C-c l : live preview mode
 #+begin_src emacs-lisp
 
 (use-package ansible
-  :defer t)
 
 #+end_src
 
@@ -413,7 +395,6 @@ C-c C-c l : live preview mode
 #+begin_src emacs-lisp
 
 (use-package dockerfile-mode
-  :defer t
   :init
   (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
   )
@@ -428,7 +409,6 @@ C-c C-c l : live preview mode
 ** terraform
 #+begin_src emacs-lisp
 (use-package terraform-mode
-  :defer t
   :mode "\\.tf$"
   :init
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
@@ -436,7 +416,6 @@ C-c C-c l : live preview mode
 
 #+BEGIN_SRC emacs-lisp
 (use-package company-terraform
-  :defer t
   :init
   (company-terraform-init))
 #+END_SRC
@@ -446,7 +425,6 @@ Shellcheck is a shell script analysis tool.
 
 #+begin_src emacs-lisp
 (use-package flymake-shellcheck
-  :defer t
   :init
   (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
   (add-hook 'sh-mode-hook 'flymake-mode))
@@ -457,7 +435,6 @@ Shellcheck is a shell script analysis tool.
 
 #+begin_src emacs-lisp
   (use-package js2-mode
-    :defer t
     :mode (("\\.js$" . js2-mode)
   ))
 #+end_src
@@ -465,7 +442,6 @@ Shellcheck is a shell script analysis tool.
 React mode
 #+begin_src emacs-lisp
   (use-package rjsx-mode
-    :defer t
     :mode (("\\.jsx$'" . rjsx-mode)))
 #+end_src
 
@@ -480,7 +456,6 @@ Code navigation
            (lambda ()
 	   (define-key js2-mode-map (kbd "M-.") nil)
              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
-    :defer t
   )
 #+end_src
 
@@ -518,7 +493,6 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
 
 #+begin_src emacs-lisp
   (use-package ansi-color
-    :defer t
     :init
     (defun colorize-compilation-buffer ()
       (when (eq major-mode 'compilation-mode)
@@ -579,7 +553,6 @@ M-S up : delete row
 #+begin_src emacs-lisp
   (use-package org
     :mode (("\\.org$" . org-mode))
-    :defer t
     :init
     (setq org-log-done t)
     (setq ord-directory (expand-file-name "~/org/"))
@@ -743,7 +716,6 @@ Org-babel async execution
 
 #+begin_src emacs-lisp
   (use-package ob-async
-    :defer t
     :init (require 'ob-async))
 #+end_src
 
@@ -753,7 +725,6 @@ C-c C-x C-v : toggle inline images
 
 #+BEGIN_SRC emacs-lisp
 (use-package ob-mermaid
-  :defer t
   :init (org-babel-do-load-languages
          'org-babel-load-languages
 	 (append org-babel-load-languages
@@ -956,7 +927,6 @@ C-c ' : Narrow into babel source
 
 #+BEGIN_SRC emacs-lisp
 (use-package w3m
-  :defer t
 )
 #+END_SRC
 
@@ -972,7 +942,6 @@ Bindings:
 C-M-i : auto correct word
 #+begin_src emacs-lisp
 (use-package flyspell
-  :defer t
   :delight flyspell-mode
   :init
   (progn
@@ -1002,7 +971,6 @@ Exemples :
 #+begin_src emacs-lisp
 
 (use-package tramp
-  :defer t
   :init
   (setq tramp-default-method "ssh")
   )
@@ -1014,7 +982,6 @@ https://github.com/pashky/restclient.el
 #+BEGIN_SRC emacs-lisp
   (use-package restclient
     :mode "\\.http$"
-    :defer t)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
@@ -1025,7 +992,6 @@ https://github.com/pashky/restclient.el
 
 #+BEGIN_SRC emacs-lisp
 (use-package ob-restclient
-  :defer t
   :init (org-babel-do-load-languages
           'org-babel-load-languages
             (append org-babel-load-languages
@@ -1039,7 +1005,6 @@ Bindings to launch google searches. All functions are bound under C-c /
 #+BEGIN_SRC emacs-lisp
   (use-package google-this
     :delight google-this-mode
-    :defer t
     :init
     (google-this-mode))
 #+END_SRC
@@ -1049,7 +1014,6 @@ Bindings to launch google searches. All functions are bound under C-c /
 #+begin_src emacs-lisp
 
 (use-package company
-  :defer t
   :config
     (setq company-idle-delay 0)
     (setq company-minimum-prefix-length 3)

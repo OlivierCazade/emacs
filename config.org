@@ -314,6 +314,7 @@ Use projectile to group buffer per project in the iBuffer view.
 ** Git
 #+begin_src emacs-lisp
 (use-package magit
+  :pin melpa
   :init
   (global-set-key (kbd "C-x g") 'magit-status)
   (setq magit-completing-read-function 'ivy-completing-read)

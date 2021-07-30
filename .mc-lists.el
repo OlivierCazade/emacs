@@ -11,6 +11,7 @@
 	kill-region
 	org-beginning-of-line
 	org-end-of-line
+	org-kill-line
 	org-return-indent
 	org-self-insert-command
 	org-shiftright

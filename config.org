@@ -5,15 +5,7 @@ C-x + : resize windows equally
 ** Packages
 No need to set ensure to true for each package.
 #+BEGIN_SRC emacs-lisp
-(setq use-package-always-ensure t)
-#+END_SRC
-
-** Benchmarking
-#+BEGIN_SRC emacs-lisp
-  (use-package benchmark-init
-    :config
-    ;; To disable collection of benchmark data after init is done.
-    (add-hook 'after-init-hook 'benchmark-init/deactivate))
+  ;; (setq use-package-always-ensure t)
 #+END_SRC
 
 ** Delight
@@ -56,16 +48,11 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
 
 *** Get env var
 #+begin_src emacs-lisp
-(use-package exec-path-from-shell
-  :init
-  (exec-path-from-shell-copy-env "GOPATH")
-  (exec-path-from-shell-copy-env "SHELL")
-  (exec-path-from-shell-copy-env "PATH")
-  (exec-path-from-shell-copy-env "LC_CTYPE")
-  (exec-path-from-shell-copy-env "LC_ALL")
-  (exec-path-from-shell-copy-env "LANG")
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize)))
+  (use-package exec-path-from-shell
+    :config
+    (setq exec-path-from-shell-variables '("PATH" "GOPATH" "SHELL" "LC_CTYPE" "LC_ALL" "LANG"))
+    (when (memq window-system '(mac ns x))
+      (exec-path-from-shell-initialize)))
 #+end_src
 
 *** Mac customization
@@ -83,6 +70,7 @@ Trailing whitespace display and management
 (add-hook 'diff-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'compilation-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'vterm-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+end_src
 
@@ -153,6 +141,8 @@ counsel-find-jump : from current directory, list recursively every file
    ("C-x C-f" . counsel-find-file))
   )
 #+end_src
+  :init
+  (setcdr (assoc 'counsel-M-x ivy-initial-inputs-alist) "")
 
 #+BEGIN_SRC emacs-lisp
 (use-package counsel-projectile
@@ -314,7 +304,6 @@ Use projectile to group buffer per project in the iBuffer view.
 ** Git
 #+begin_src emacs-lisp
 (use-package magit
-  :pin melpa
   :init
   (global-set-key (kbd "C-x g") 'magit-status)
   (setq magit-completing-read-function 'ivy-completing-read)
@@ -403,8 +392,7 @@ C-c C-c l : live preview mode
 #+end_src
 
 #+begin_src emacs-lisp
-(use-package docker-compose-mode
-  :ensure t)
+(use-package docker-compose-mode)
 #+end_src
 
 ** terraform
@@ -429,6 +417,14 @@ Shellcheck is a shell script analysis tool.
   :init
   (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
   (add-hook 'sh-mode-hook 'flymake-mode))
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package vterm)
+(add-hook 'vterm-mode-hook
+          (lambda ()
+            (display-line-numbers-mode 0)))
+(use-package vterm-toggle)
 #+end_src
 
 ** Web
@@ -470,7 +466,11 @@ Formatting
         (add-hook 'web-mode-hook 'prettier-js-mode)
 )
 #+end_src
-
+** Cucumber
+#+begin_src emacs-lisp
+(use-package feature-mode
+    :mode ("\\.feature\\'" . feature-mode))
+#+end_src
 
 ** Latex
 Bindings :
@@ -480,7 +480,7 @@ C-c C-c : master command
 C-c C-a : run all
 #+begin_src emacs-lisp
 (use-package tex
-  :ensure auctex
+  :straight auctex
   :init
     (setq TeX-auto-save t)
     (setq TeX-parse-self t)
@@ -510,7 +510,6 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
 ** Kubernetes
 #+BEGIN_SRC emacs-lisp
 (use-package kubernetes
-  :ensure t
   :commands (kubernetes-overview))
 #+END_SRC
 
@@ -521,6 +520,27 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
   (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
 )
 #+END_SRC
+
+** Go
+ M-. Go to definition
+ M-, Go back to the last place M-. was used
+#+BEGIN_SRC emacs-lisp
+(use-package go-mode
+  :config (defun lsp-go-install-save-hooks ()
+     (add-hook 'before-save-hook #'lsp-format-buffer t t)
+     (add-hook 'before-save-hook #'lsp-organize-imports t t))
+     (add-hook 'go-mode-hook #'lsp-go-install-save-hooks))
+
+#+END_SRC
+
+** lsp
+
+#+BEGIN_SRC emacs-lisp
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :hook (go-mode . lsp-deferred))
+#+END_SRC
+
 * Org
 ** General
 Global bindings :
@@ -556,7 +576,7 @@ M-S up : delete row
     :mode (("\\.org$" . org-mode))
     :init
     (setq org-log-done t)
-    (setq ord-directory (expand-file-name "~/org/"))
+    (setq org-directory (expand-file-name "~/org/"))
     (setq org-agenda-files (list org-directory))
     :bind
     ("C-c a" . org-agenda)
@@ -957,8 +977,7 @@ C-M-i : auto correct word
 #+end_src
 
 #+BEGIN_SRC emacs-lisp
-(use-package flyspell-correct-ivy
-  :ensure t)
+(use-package flyspell-correct-ivy)
 #+END_SRC
 
 ** Tramp
@@ -969,6 +988,8 @@ Exemples :
 /sudo::/etc/fstab
 /ssh:user@host|sudo::/home/user/file
 
+Use C-c t to enable/disable vterm copy mode
+
 #+begin_src emacs-lisp
 
 (use-package tramp
@@ -977,6 +998,17 @@ Exemples :
   )
 
 #+end_src
+
+** bookmarks
+Bookmarks files location
+
+Bindings :
+
+C-x r m : Set the bookmark for the visited file, at point.
+C-x r m bookmark : Set the bookmark named bookmark at point (bookmark-set).
+C-x r M bookmark : Like C-x r m, but don't overwrite an existing bookmark.
+C-x r b bookmark : Jump to the bookmark named bookmark (bookmark-jump).
+C-x r l : List all bookmarks (list-bookmarks).
 
 ** REST client
 https://github.com/pashky/restclient.el
@@ -1014,13 +1046,19 @@ Bindings to launch google searches. All functions are bound under C-c /
 
 #+begin_src emacs-lisp
 
-(use-package company
-  :config
-    (setq company-idle-delay 0)
-    (setq company-minimum-prefix-length 3)
-    (global-company-mode t))
+  (use-package company
+    :config
+      (setq company-idle-delay 0)
+      (setq company-minimum-prefix-length 3)
+      (global-company-mode t))
+
+  ;; crash
+  ;; (use-package company-box
+  ;;   :hook (company-mode . company-box-mode))
 
 #+end_src
+
+
 
 * To try
 ** org-reveal
@@ -1032,11 +1070,11 @@ https://emacsair.me/2018/12/19/forge-0.1/
 * Auto update
 Periodically update package, default interval is 7 days.
 #+begin_src emacs-lisp
-(use-package auto-package-update
-  :config
-  (setq auto-package-update-delete-old-versions t)
-  (setq auto-package-update-hide-results t)
-  (auto-package-update-maybe))
+  ;; (use-package auto-package-update
+  ;;   :config
+  ;;   (setq auto-package-update-delete-old-versions t)
+  ;;   (setq auto-package-update-hide-results t)
+  ;;   (auto-package-update-maybe))
 #+end_src
 * Credits
 Thanks to these persons for sharing their configuration :

@@ -858,8 +858,8 @@ v change time range
 			     ))
 	    (todo "NEXT"
 		       ((org-super-agenda-groups
-			  '((:name "Office"
-			     :tag "sophia")
+			  '((:name "Work"
+			     :tag "work")
 			    (:name "Personal"
 			     :tag "perso")))
 			     )

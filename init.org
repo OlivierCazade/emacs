@@ -26,6 +26,9 @@
 * General
 ** General key binding
 C-x + : resize windows equally
+C-x C-+ : Zoom in
+C-x C-- : Zoom out
+
 ** Packages
 No need to set ensure to true for each package.
 #+BEGIN_SRC emacs-lisp

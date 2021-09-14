@@ -1,3 +1,27 @@
+* Init
+#+BEGIN_SRC emacs-lisp
+(set-language-environment "UTF-8")
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "http://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+(setq straight-use-package-by-default t)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(straight-use-package 'use-package)
+#+END_SRC
 
 * General
 ** General key binding
@@ -17,7 +41,7 @@ Delight is used to hide some minor-mode from ModeLine
 #+begin_src emacs-lisp
   (use-package zenburn-theme)
   (load-theme 'zenburn t)
-  (set-face-attribute 'default nil :family "FiraCode Nerd Font Mono"  :height 120)
+  (set-face-attribute 'default nil :family "FiraCode"  :height 100)
 #+end_src
 
 ** Preferences

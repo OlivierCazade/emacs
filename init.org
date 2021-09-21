@@ -455,43 +455,14 @@ Shellcheck is a shell script analysis tool.
 #+end_src
 
 ** Web
-*** Javascript
+*** JavaScript
 
 #+begin_src emacs-lisp
-  (use-package js2-mode
-    :mode (("\\.js$" . js2-mode)
-  ))
-#+end_src
-
-React mode
-#+begin_src emacs-lisp
-  (use-package rjsx-mode
-    :mode (("\\.jsx$'" . rjsx-mode)))
-#+end_src
-
-Code navigation
-
-#+begin_src emacs-lisp
-  (use-package xref-js2
-    :init
-
-    (add-hook
-           'js2-mode-hook
-           (lambda ()
-	   (define-key js2-mode-map (kbd "M-.") nil)
-             (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
-  )
-#+end_src
-
-Formatting
-
-#+begin_src emacs-lisp
-(use-package prettier-js
-    :init
-        (add-hook 'js2-mode-hook 'prettier-js-mode)
-        (add-hook 'rjsx-mode-hook 'prettier-js-mode)
-        (add-hook 'web-mode-hook 'prettier-js-mode)
-)
+(use-package web-mode
+  :commands (web-mode)
+  :mode
+  ("\\.html\\'" . web-mode)
+  ("\\.tsx\\'" . web-mode))
 #+end_src
 ** Cucumber
 #+begin_src emacs-lisp

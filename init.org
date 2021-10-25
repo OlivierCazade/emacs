@@ -945,8 +945,7 @@ C-c ' : Narrow into babel source
 
 
 #+BEGIN_SRC emacs-lisp
-(use-package w3m
-)
+  ;; (use-package w3m)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp

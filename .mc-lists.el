@@ -9,6 +9,7 @@
 	elpy-nav-forward-indent
 	indent-for-tab-command
 	kill-region
+	lsp-signature-stop
 	org-beginning-of-line
 	org-end-of-line
 	org-kill-line

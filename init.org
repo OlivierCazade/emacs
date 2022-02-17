@@ -546,6 +546,12 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
   :mode "\\.nix\\'")
 #+END_SRC
 
+** lua
+
+#+BEGIN_SRC emacs-lisp
+(use-package lua-mode)
+#+END_SRC
+
 
 * Org
 ** General

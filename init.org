@@ -447,11 +447,11 @@ Shellcheck is a shell script analysis tool.
 #+end_src
 
 #+begin_src emacs-lisp
-(use-package vterm)
-(add-hook 'vterm-mode-hook
-          (lambda ()
-            (display-line-numbers-mode 0)))
-(use-package vterm-toggle)
+  ;; (use-package vterm)
+  ;; (add-hook 'vterm-mode-hook
+  ;;           (lambda ()
+  ;;             (display-line-numbers-mode 0)))
+  ;; (use-package vterm-toggle)
 #+end_src
 
 ** Web

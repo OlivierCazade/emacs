@@ -3,6 +3,8 @@ backups/
 config.el
 elpa/
 url/
+straight/
+.lsp-session-v1
 network-security.data
 projectile-bookmarks.eld
 recentf

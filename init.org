@@ -202,13 +202,6 @@ C-= : expand-region
     :bind ("C-=" . er/expand-region))
 #+END_SRC
 
-** Emoji
-
-Use emojify-insert-emoji to insert an emoji
-
-#+begin_src emacs-lisp
-(use-package emojify)
-#+end_src
 
 ** Dired
 Bindings :

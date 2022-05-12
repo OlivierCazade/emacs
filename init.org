@@ -478,12 +478,15 @@ C-c C-a : run all
 Use C-u M-x compile to run compilation buffer with shell interaction.
 
 #+begin_src emacs-lisp
-  (use-package ansi-color
-    :init
-    (defun colorize-compilation-buffer ()
-      (when (eq major-mode 'compilation-mode)
-      (ansi-color-apply-on-region compilation-filter-start (point-max))))
-    (add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
+	(use-package ansi-color
+	  :init
+	  (defun colorize-compilation-buffer ()
+	    (when (eq major-mode 'compilation-mode)
+	    (ansi-color-apply-on-region compilation-filter-start (point-max))))
+	  (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+	  (add-to-list 'display-buffer-alist
+		       '("*compilation*" display-buffer-same-window))
+	  )
 #+end_src
 
 #+BEGIN_SRC emacs-lisp

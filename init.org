@@ -469,13 +469,13 @@ C-c C-v : view document
 C-c C-c : master command
 C-c C-a : run all
 #+begin_src emacs-lisp
-(use-package tex
-  :straight auctex
-  :init
-    (setq TeX-auto-save t)
-    (setq TeX-parse-self t)
-    (setq TeX-view-evince-keep-focus t)
-    (add-hook 'LaTeX-mode-hook 'flymake-mode))
+  (use-package tex
+    :straight auctex
+    :init
+      (setq TeX-auto-save t)
+      (setq TeX-parse-self t)
+      ;; (setq TeX-view-evince-keep-focus t)
+      (add-hook 'LaTeX-mode-hook 'flymake-mode))
 #+end_src
 
 ** Compilation

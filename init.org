@@ -927,7 +927,8 @@ NzcxNTAwMjc0MDc0OobHJTTx/VzWvRJK3XTkL5HrbXR0
   (use-package org-jira
     :delight org-jira-mode
     :config
-    (make-directory "~/.org-jira")
+     (unless (file-exists-p "~/.org-jira")
+       (make-directory "~/.org-jira"))
     (setq jiralib-url "https://issues.redhat.com")
     )
 #+end_src

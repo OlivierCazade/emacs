@@ -87,14 +87,6 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
       (exec-path-from-shell-initialize)))
 #+end_src
 
-*** Mac customization
-Use macbook cmd key as meta key
-#+begin_src emacs-lisp
-(when (eq system-type 'darwin)
-  (setq mac-command-modifier 'meta)
-  (setq mac-option-modifier nil))
-#+end_src
-
 ** Trailing whitespace
 Trailing whitespace display and management
 #+begin_src emacs-lisp

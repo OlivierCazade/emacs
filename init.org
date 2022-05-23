@@ -928,6 +928,18 @@ C-x n e : Narrow to element
 C-x n s : Narrow to subtree
 C-x n w : Leave narrow mode
 C-c ' : Narrow into babel source
+
+** Jira
+NzcxNTAwMjc0MDc0OobHJTTx/VzWvRJK3XTkL5HrbXR0
+#+begin_src emacs-lisp
+  (use-package org-jira
+    :delight org-jira-mode
+    :config
+    (make-directory "~/.org-jira")
+    (setq jiralib-url "https://issues.redhat.com")
+    )
+#+end_src
+
 * Mail
 
 #+BEGIN_SRC emacs-lisp

@@ -499,13 +499,6 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
   :commands (kubernetes-overview))
 #+END_SRC
 
-** Groovy
-#+BEGIN_SRC emacs-lisp
-(use-package groovy-mode
-  :init
-  (add-to-list 'auto-mode-alist '("\\.gradle\\'" . groovy-mode))
-)
-#+END_SRC
 
 ** Go
  M-. Go to definition

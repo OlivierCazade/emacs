@@ -260,7 +260,7 @@ yas-expand : Expand snippet from key before point
   )
 #+end_src
 * Coding
-** Project management
+** Project navigation
 Bindings :
 C-p p p : projectile-switch-project
 C-x f or C-p p f : projectile-find-file

@@ -349,9 +349,10 @@ Usefull bindings:
 Use M-x elpy-config to check required binaries
 #+begin_src emacs-lisp
   (use-package elpy
-     :delight elpy-mode
-     :init
-     (elpy-enable))
+    :delight elpy-mode
+    :defer t
+    :init
+    (advice-add 'python-mode :before 'elpy-enable))
 #+end_src
 
 Syntax highlighting for requirements.txt files

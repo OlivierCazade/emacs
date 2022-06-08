@@ -1038,14 +1038,6 @@ https://github.com/pashky/restclient.el
 
 
 * Work in progress
-** Google this
-Bindings to launch google searches. All functions are bound under C-c /
-#+BEGIN_SRC emacs-lisp
-  (use-package google-this
-    :delight google-this-mode
-    :init
-    (google-this-mode))
-#+END_SRC
 
 ** Completion
 

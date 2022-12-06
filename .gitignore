@@ -2,6 +2,7 @@ auto-save-list/
 backups/
 config.el
 elpa/
+elpy/
 url/
 straight/
 .lsp-session-v1

@@ -16,6 +16,7 @@ projectile.cache
 bookmarks
 .last-package-update-day
 emojis/
+eln-cache/
 .org-id-locations
 init.el
 transient/history.el

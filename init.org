@@ -60,7 +60,7 @@ Delight is used to hide some minor-mode from ModeLine
   (global-auto-revert-mode t)
   (define-key global-map "\C-xk" 'kill-this-buffer)
   (show-paren-mode)
-
+  (setq ring-bell-function 'ignore)
   ;; Only split vertically on very tall screens
   ;; (setq split-height-threshold 110)
 #+end_src

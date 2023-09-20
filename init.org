@@ -547,6 +547,7 @@ C-c C-d			: to add a deadline
 C-c .			: add a timestamp
 C-c !			: add an inactive timestamp that will not cause an agenda entry
 C-u C-u TAB		: switching back to startup visibility
+C-c C-k			: expose all headers but not bodies
 
 About dates :
 #+begin_src

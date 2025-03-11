@@ -527,6 +527,15 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
   :mode "\\.nix\\'")
 #+END_SRC
 
+#+BEGIN_SRC emacs-lisp
+  ;; (use-package lsp-nix
+  ;;   :ensure lsp-mode
+  ;;   :after (lsp-mode)
+  ;;   :demand t
+  ;;   :custom
+  ;;   (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
+#+END_SRC
+
 ** lua
 
 #+BEGIN_SRC emacs-lisp
@@ -796,43 +805,41 @@ v change time range
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-      (use-package org-super-agenda
-      :config
-      (org-super-agenda-mode t))
+	(use-package org-super-agenda
+	:config
+	(org-super-agenda-mode t))
 
-  (setq org-super-agenda-groups
-	   '(
-	       (:name "Appointment"
-	        :time-grid t)
-               (:name "Today"
-	        :scheduled t
-		:deadline t)
-	       (:name "Office"
-		      :tag "sophia")
-	       (:name "Home"
-		      :tag "pers")
+    (setq org-agenda-custom-commands
+	  '(("A" "Office block agenda"
+	     ((agenda "" ((org-agenda-span 1)
+			  (org-super-agenda-groups
+			    '((:name "Appointment"
+			       :time-grid t)
+			      (:name "Today"
+			       :scheduled t
+			       :deadline t)))
+			       ))
+	      (todo "NEXT"
+			 ((org-super-agenda-groups
+			    '((:name "Work"
+			       :tag "work")
+			      (:name "Personal"
+			       :tag "pers")
+			      (:name "Garden"
+			     :tag "garden")))
+			       )
+	      )))
+	    ("G" "Garden planning"
+	     ((tags-todo "garden"
+		    ((org-super-agenda-date-format "%B")
+		     (org-super-agenda-groups
+		      '((
+			 :auto-planning t
+			 )))
+		     )))
+	     )
 	    )
-  )
-
-  (setq org-agenda-custom-commands
-	'(("A" "Office block agenda"
-	   ((agenda "" ((org-agenda-span 1)
-			(org-super-agenda-groups
-			  '((:name "Appointment"
-			     :time-grid t)
-			    (:name "Today"
-			     :scheduled t
-			     :deadline t)))
-			     ))
-	    (todo "NEXT"
-		       ((org-super-agenda-groups
-			  '((:name "Work"
-			     :tag "work")
-			    (:name "Personal"
-			     :tag "perso")))
-			     )
-	    ))
-	  )))
+	  )
 #+END_SRC
 
 

@@ -324,25 +324,26 @@ Use projectile to group buffer per project in the iBuffer view.
 Highlight uncommitted changes
 
 #+BEGIN_SRC emacs-lisp
-  ;; (use-package git-gutter
-  ;;   :init
-  ;;   (global-git-gutter-mode t)
-  ;;   (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
-  ;;   :hook (prog-mode . git-gutter-mode)
-  ;;   :delight git-gutter-mode)
+  (use-package git-gutter
+    :init
+    (global-git-gutter-mode t)
+    (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
+    :hook (prog-mode . git-gutter-mode)
+    :delight git-gutter-mode)
 
-  (defvar native-comp-deferred-compilation-deny-list nil)
-  (use-package diff-hl
-	    :init
-	    (global-diff-hl-mode)
-	    :delight diff-hl-mode)
+  ;; (
+  ;;  defvar native-comp-deferred-compilation-deny-list nil)
+  ;;   (use-package diff-hl
+  ;;   	    :init
+  ;;   	    (global-diff-hl-mode)
+  ;;   	    :delight diff-hl-mode)
 #+END_SRC
 
 Display todos in magit (disabled due to big project errors)
 
 #+BEGIN_SRC emacs-lisp
-  ;; (use-package magit-todos
-  ;;  :config (magit-todos-mode t))
+ (use-package magit-todos
+  :config (magit-todos-mode t))
 #+END_SRC
 
 ** Python

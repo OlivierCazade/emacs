@@ -10,6 +10,9 @@
 	indent-for-tab-command
 	kill-region
 	lsp-signature-stop
+	markdown-beginning-of-line
+	markdown-end-of-line
+	markdown-outdent-or-delete
 	org-beginning-of-line
 	org-end-of-line
 	org-kill-line
@@ -17,6 +20,7 @@
 	org-self-insert-command
 	org-shiftright
 	org-yank
+	sp-remove-active-pair-overlay
 	tab-to-tab-stop
 	yaml-electric-backspace
 	yaml-electric-dash-and-dot

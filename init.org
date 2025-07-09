@@ -1061,9 +1061,9 @@ https://github.com/pashky/restclient.el
 
   (use-package company
     :config
-      (setq company-idle-delay 0)
-      (setq company-minimum-prefix-length 3)
-      (global-company-mode t))
+    (setq company-idle-delay 0)
+    (setq company-minimum-prefix-length 3)
+    (global-company-mode t))
 
   ;; crash
   ;; (use-package company-box

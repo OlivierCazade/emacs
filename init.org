@@ -530,8 +530,8 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
 ** nix
 
 #+BEGIN_SRC emacs-lisp
-(use-package nix-mode
-  :mode "\\.nix\\'")
+  (use-package nix-mode
+    :mode "\\.nix\\'")
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp

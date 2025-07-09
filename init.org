@@ -32,7 +32,7 @@ C-x C-- : Zoom out
 ** Packages
 No need to set ensure to true for each package.
 #+BEGIN_SRC emacs-lisp
-  ;; (setq use-package-always-ensure t)
+(setq use-package-always-ensure t)
 #+END_SRC
 
 ** Delight

@@ -231,7 +231,7 @@ C-x * q : quick-mode
 C-x * c : calc-mode
 
 ** Multiplie cursors
-Bindings
+Bindings :
 
 C-g : Leave multiple cursors mode
 C-c m l : Edit multi line, one cursor is added at the beginning of each line of the region

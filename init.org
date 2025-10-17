@@ -456,11 +456,6 @@ Shellcheck is a shell script analysis tool.
   ("\\.html\\'" . web-mode)
   ("\\.tsx\\'" . web-mode))
 #+end_src
-** Cucumber
-#+begin_src emacs-lisp
-(use-package feature-mode
-    :mode ("\\.feature\\'" . feature-mode))
-#+end_src
 
 ** Latex
 Bindings :

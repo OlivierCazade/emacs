@@ -533,12 +533,12 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
- (use-package lsp-nix
-   :ensure lsp-mode
-   :after (lsp-mode)
-   :demand t
-   :custom
-   (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
+  ;; (use-package lsp-nix
+  ;;   :ensure lsp-mode
+  ;;   :after (lsp-mode)
+  ;;   :demand t
+  ;;   :custom
+  ;;   (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
 #+END_SRC
 
 ** lua

@@ -438,12 +438,15 @@ Shellcheck is a shell script analysis tool.
   (add-hook 'sh-mode-hook 'flymake-mode))
 #+end_src
 
+Bindings in vterm :
+C-c C-t : enable/disable vterm copy mode
+
 #+begin_src emacs-lisp
-  ;; (use-package vterm)
-  ;; (add-hook 'vterm-mode-hook
-  ;;           (lambda ()
-  ;;             (display-line-numbers-mode 0)))
-  ;; (use-package vterm-toggle)
+  (use-package vterm)
+  (add-hook 'vterm-mode-hook
+            (lambda ()
+              (display-line-numbers-mode 0)))
+  (use-package vterm-toggle)
 #+end_src
 
 ** Web

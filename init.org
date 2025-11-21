@@ -82,7 +82,7 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
 #+begin_src emacs-lisp
   (use-package exec-path-from-shell
     :config
-    (setq exec-path-from-shell-variables '("PATH" "GOPATH" "SHELL" "LC_CTYPE" "LC_ALL" "LANG"))
+    (setq exec-path-from-shell-variables '("PATH" "GOPATH" "SHELL" "LC_CTYPE" "LC_ALL" "LANG" "PYENV_ROOT" "NODE_PATH" "AWS_PROFILE" "CLAUDE_CODE_USE_VERTEX" "CLOUD_ML_REGION" "ANTHROPIC_VERTEX_PROJECT_ID"))
     (when (memq window-system '(mac ns x))
       (exec-path-from-shell-initialize)))
 #+end_src
@@ -259,6 +259,7 @@ yas-expand : Expand snippet from key before point
     (yas-global-mode)
   )
 #+end_src
+
 * Coding
 ** Project navigation
 Bindings :
@@ -547,6 +548,18 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
 (use-package lua-mode)
 #+END_SRC
 
+** Claude
+
+#+BEGIN_SRC emacs-lisp
+  (use-package claude-code-ide
+    :straight (:type git :host github :repo "manzaltu/claude-code-ide.el")
+    :bind ("C-c i" . claude-code-ide-menu) ; Set your favorite keybinding
+
+    :config
+    (setq claude-code-ide-enable-mcp-server t)
+    (claude-code-ide-emacs-tools-setup) ; Optionally enable Emacs MCP tools
+    )
+#+END_SRC
 
 * Org
 ** General

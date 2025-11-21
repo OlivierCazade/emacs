@@ -978,11 +978,6 @@ C-c ' : Narrow into babel source
 #+END_SRC
 
 
-
-#+BEGIN_SRC emacs-lisp
-  ;; (use-package w3m)
-#+END_SRC
-
 #+BEGIN_SRC emacs-lisp
 (setq mm-text-html-renderer 'w3m)
 #+END_SRC

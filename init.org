@@ -165,8 +165,6 @@ counsel-find-jump : from current directory, list recursively every file
    ("C-x C-f" . counsel-find-file))
   )
 #+end_src
-  :init
-  (setcdr (assoc 'counsel-M-x ivy-initial-inputs-alist) "")
 
 #+BEGIN_SRC emacs-lisp
 (use-package counsel-projectile

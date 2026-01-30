@@ -167,8 +167,8 @@ counsel-find-jump : from current directory, list recursively every file
 #+end_src
 
 #+BEGIN_SRC emacs-lisp
-(use-package counsel-projectile
-:init (counsel-projectile-mode))
+  (use-package counsel-projectile
+    :init (counsel-projectile-mode))
 #+END_SRC
 
 *** smex

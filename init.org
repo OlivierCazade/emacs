@@ -1069,7 +1069,7 @@ https://github.com/pashky/restclient.el
 
   (use-package company
     :config
-    (setq company-idle-delay 0)
+    (setq company-idle-delay 0.2)
     (setq company-minimum-prefix-length 3)
     (global-company-mode t))
 

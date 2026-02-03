@@ -1062,15 +1062,6 @@ https://github.com/pashky/restclient.el
 https://emacsair.me/2018/12/19/forge-0.1/
 ** Use :ensure-system-package from use-package
 
-* Auto update
-Periodically update package, default interval is 7 days.
-#+begin_src emacs-lisp
-  ;; (use-package auto-package-update
-  ;;   :config
-  ;;   (setq auto-package-update-delete-old-versions t)
-  ;;   (setq auto-package-update-hide-results t)
-  ;;   (auto-package-update-maybe))
-#+end_src
 * Credits
 Thanks to these persons for sharing their configuration :
  - [[http://pages.sachachua.com/.emacs.d/Sacha.html][Sacha Chua]]

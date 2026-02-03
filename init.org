@@ -274,23 +274,6 @@ C-p s g : grep in project
     :init
     (projectile-mode)
     (setq projectile-use-git-grep t)
-
-  ;; ;; From : https://github.com/bbatsov/projectile/issues/1270#issuecomment-469039389
-  ;; (defun projectile-default-generic-command (project-type command-type)
-  ;;   "Generic retrieval of COMMAND-TYPEs default cmd-value for PROJECT-TYPE.
-
-  ;; If found, checks if value is symbol or string.  In case of symbol
-  ;; resolves to function `funcall's.  Return value of function MUST
-  ;; be string to be executed as command."
-  ;;   (let ((command (plist-get (alist-get project-type projectile-project-types) command-type)))
-  ;;     (cond
-  ;;      ((stringp command) command)
-  ;;      ((functionp command)
-  ;;       (if (fboundp command)
-  ;;           (funcall (symbol-function command))))
-  ;;      ((and (not command) (eq command-type 'compilation-dir))
-  ;;       ;; `compilation-dir' is special in that it is used as a fallback for the root
-  ;;       nil))))
     :bind ("C-x f" . projectile-find-file))
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 #+end_src

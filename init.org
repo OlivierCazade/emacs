@@ -314,13 +314,6 @@ Highlight uncommitted changes
     (add-to-list 'git-gutter:update-hooks 'focus-in-hook)
     :hook (prog-mode . git-gutter-mode)
     :delight git-gutter-mode)
-
-  ;; (
-  ;;  defvar native-comp-deferred-compilation-deny-list nil)
-  ;;   (use-package diff-hl
-  ;;   	    :init
-  ;;   	    (global-diff-hl-mode)
-  ;;   	    :delight diff-hl-mode)
 #+END_SRC
 
 Display todos in magit (disabled due to big project errors)

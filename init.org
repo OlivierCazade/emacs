@@ -323,6 +323,14 @@ Display todos in magit (disabled due to big project errors)
   :config (magit-todos-mode t))
 #+END_SRC
 
+Use forge
+
+#+BEGIN_SRC emacs-lisp
+(use-package forge
+  :after magit)
+#+END_SRC
+
+
 ** Python
 Usefull bindings:
  M-. Go to definition

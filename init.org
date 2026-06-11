@@ -1064,7 +1064,6 @@ https://github.com/pashky/restclient.el
 
 
 * To try
-** org-reveal
 ** org-super-agenda or org-ql
 ** Git forges
 https://emacsair.me/2018/12/19/forge-0.1/

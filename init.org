@@ -434,6 +434,16 @@ C-c C-t : enable/disable vterm copy mode
   (use-package vterm-toggle)
 #+end_src
 
+#+begin_src emacs-lisp
+  (use-package ghostel
+    :init
+    (add-hook 'ghostel-mode-hook
+  	    (lambda ()
+  	      (display-line-numbers-mode 0)))
+    )
+
+#+end_src
+
 ** Web
 *** JavaScript
 

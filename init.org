@@ -610,9 +610,7 @@ M-S up : delete row
 		("DONE" :foreground "forest green" :weight bold)
 		("WAITING" :foreground "orange" :weight bold)
 		("HOLD" :foreground "magenta" :weight bold)
-		("CANCELLED" :foreground "forest green" :weight bold)
-		("MEETING" :foreground "forest green" :weight bold)
-		("PHONE" :foreground "forest green" :weight bold))))
+		("CANCELLED" :foreground "forest green" :weight bold))))
 #+end_src
 
 An task cannot be DONE if a subtask is not DONE :

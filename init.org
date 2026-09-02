@@ -551,6 +551,7 @@ Use C-u M-x compile to run compilation buffer with shell interaction.
 
     :config
     (setq claude-code-ide-enable-mcp-server t)
+    (setq claude-code-ide-terminal-backend 'ghostel)
     (claude-code-ide-emacs-tools-setup) ; Optionally enable Emacs MCP tools
     )
 #+END_SRC

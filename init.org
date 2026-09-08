@@ -327,8 +327,8 @@ Display todos in magit (disabled due to big project errors)
 Use forge
 
 #+BEGIN_SRC emacs-lisp
-(use-package forge
-  :after magit)
+  ;; (use-package forge
+  ;;   :after magit)
 #+END_SRC
 
 

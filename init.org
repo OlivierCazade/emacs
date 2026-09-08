@@ -834,20 +834,10 @@ v change time range
 			    '((:name "Work"
 			       :tag "work")
 			      (:name "Personal"
-			       :tag "pers")
-			      (:name "Garden"
-			     :tag "garden")))
+			       :tag "pers")))
 			       )
 	      )))
-	    ("G" "Garden planning"
-	     ((tags-todo "garden"
-		    ((org-super-agenda-date-format "%B")
-		     (org-super-agenda-groups
-		      '((
-			 :auto-planning t
-			 )))
-		     )))
-	     )
+
 	    )
 	  )
 #+END_SRC

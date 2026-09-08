@@ -90,12 +90,13 @@ https://www.reddit.com/r/emacs/comments/7v6fll/whats_in_your_initialscratchmessa
 ** Trailing whitespace
 Trailing whitespace display and management
 #+begin_src emacs-lisp
-(setq-default show-trailing-whitespace t)
-(add-hook 'diff-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(add-hook 'compilation-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(add-hook 'vterm-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (setq-default show-trailing-whitespace t)
+  (add-hook 'diff-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+  (add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+  (add-hook 'compilation-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+  (add-hook 'vterm-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+  (add-hook 'ghostel-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
 #+end_src
 
 ** Backup files

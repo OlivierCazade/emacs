@@ -991,8 +991,6 @@ https://github.com/pashky/restclient.el
 
 #+end_src
 
-
-
 * To try
 ** org-super-agenda or org-ql
 ** Git forges

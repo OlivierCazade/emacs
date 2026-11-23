@@ -1,4 +1,14 @@
 * Init
+
+The first line of the tangled ~init.el~ must carry the ~lexical-binding~ cookie,
+otherwise Emacs 30+ warns at every startup that it is missing. Keep this block
+first so the cookie lands on line 1.
+
+#+BEGIN_SRC emacs-lisp
+;;; init.el --- Personal Emacs configuration -*- lexical-binding: t; -*-
+;;; Generated from init.org by `make'. Do not edit directly.
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp
 (set-language-environment "UTF-8")
 #+END_SRC

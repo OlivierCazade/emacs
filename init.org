@@ -583,12 +583,12 @@ C-u C-u TAB		: switching back to startup visibility
 C-c C-k			: expose all headers but not bodies
 
 About dates :
-#+begin_src
+#+begin_example
 <YYYY-MM-DD> is a timestamp, hit C-c C-c to normalize it
 [YYYY-MM-DD] is an inactive timestamp
 Repeater can be added to the timestamp ex: <YYYY-MM-DD +1w> everyweek
 ++ and .+ are special repeater to use when the next occurence depends on when the previous occurence is switched to DONE
-#+end_src
+#+end_example
 
 Tables with org-mode
 C-c | : Create new table
